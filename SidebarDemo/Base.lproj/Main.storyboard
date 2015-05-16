@@ -105,7 +105,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWP-sa-Vux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848" y="-49"/>
+            <point key="canvasLocation" x="813" y="-117"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RAA-LJ-Oq8">
+            <objects>
+                <viewController id="oB8-qv-Ozh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bmF-Gz-Thn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" id="YsG-57-RKN">
+                                <rect key="frame" x="37" y="137" width="247" height="293"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSC-qS-poW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151" y="-117"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="EDl-71-Ti2">
@@ -254,6 +274,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="194" height="230"/>
         <image name="menu" width="22" height="22"/>
         <image name="news" width="1024" height="1024"/>
     </resources>

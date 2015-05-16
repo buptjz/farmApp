@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
+#import "WaterViewController.h"
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *modalView;
@@ -17,12 +18,6 @@
 
 @implementation MainViewController
 
-//- (BOOL)touchesShouldCancelInContentView:(UIView *)view {
-//    if ([view isKindOfClass:[UIButton class]]) {
-//        return true;
-//    }
-//    return false;
-//}
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     NSLog(@"拖动开始");
@@ -51,8 +46,18 @@
 }
 
 - (IBAction)checkButtonPressed:(id)sender {
-//    self.myScrollView.alpha = 1;
+    //http://www.jianshu.com/p/bf3325111fe5
+    
     NSLog(@"button pressed!");
+    
+    WaterViewController * testVC = [[WaterViewController alloc]init];
+    
+    self.definesPresentationContext = YES; //self is presenting view controller
+    testVC.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.4];
+    testVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    
+    [self presentViewController:testVC animated:YES completion:nil];
+    
 }
 
 - (void)viewDidLoad {

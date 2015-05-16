@@ -1,5 +1,5 @@
 //
-//  TouchPassScrollView.h
+//  WaterViewController.h
 //  SidebarDemo
 //
 //  Created by WangJZ on 15/5/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TouchPassScrollView : UIScrollView
+@interface WaterViewController : UIViewController
 
 @end
