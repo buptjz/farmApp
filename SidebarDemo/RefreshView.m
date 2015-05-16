@@ -79,7 +79,7 @@
     }
 //rzy
 //    myLable.text = @"下拉刷新";
-    scrollView.contentOffset = CGPointZero;
+//    scrollView.contentOffset = CGPointZero;//这里先注释掉了！
 //rzy
 //    isShouldLoad = NO;
 }

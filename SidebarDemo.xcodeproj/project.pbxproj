@@ -86,7 +86,6 @@
 		83F75B491AFF8C62008A27A8 /* Vs */ = {
 			isa = PBXGroup;
 			children = (
-				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
 				83F75B461AFF8BCC008A27A8 /* SecondViewController.h */,
 				83F75B471AFF8BCC008A27A8 /* SecondViewController.m */,
 				F4090BC11A0FD62A00651F6F /* MainViewController.h */,
@@ -122,6 +121,7 @@
 		F4090B901A0F67D000651F6F /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
 				83F75B491AFF8C62008A27A8 /* Vs */,
 				F4090BC71A0FD74700651F6F /* SWRevealViewController */,
 				F4090B911A0F67D000651F6F /* Supporting Files */,

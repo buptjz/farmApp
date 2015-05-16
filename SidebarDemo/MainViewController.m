@@ -18,6 +18,7 @@
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     NSLog(@"拖动开始");
+    NSLog(@"%f",self.myScrollView.contentOffset.y);
     [self.refreshView isScrollViewStartDragging:scrollView];
 }
 // 拖动过程中
@@ -37,7 +38,7 @@
     self.refreshView.frame = CGRectMake(0, -50, 320, 50);
     //refreshView.backgroundColor = [UIColor redColor];
     [self.myScrollView addSubview:self.refreshView];
-    self.myScrollView.contentSize = CGSizeMake(320, 460);
+    self.myScrollView.contentSize = CGSizeMake(320, 548);
     self.myScrollView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
 
 }
