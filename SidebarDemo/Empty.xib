@@ -40,7 +40,7 @@
 					<object class="IBUILabel" id="33239608">
 						<reference key="NSNextResponder" ref="866769815"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{130, 14}, {139, 21}}</string>
+						<string key="NSFrame">{{91, 14}, {139, 21}}</string>
 						<reference key="NSSuperview" ref="866769815"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -53,11 +53,11 @@
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MCAwIDAAA</bytes>
-							<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUITextAlignment">1</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">1</int>
 							<int key="weightCategory">0</int>
@@ -73,7 +73,7 @@
 					<object class="IBUIImageView" id="86441877">
 						<reference key="NSNextResponder" ref="866769815"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{30, 6}, {23, 44}}</string>
+						<string key="NSFrame">{{8, -4}, {23, 50}}</string>
 						<reference key="NSSuperview" ref="866769815"/>
 						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -104,10 +104,6 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="33239608"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
-				</object>
 				<object class="IBUISimulatedSizeMetrics" key="IBUISimulatedDestinationMetrics">
 					<string key="IBUISimulatedSizeMetricsClass">IBUISimulatedFreeformSizeMetricsSentinel</string>
 					<string key="IBUIDisplayName">Freeform</string>

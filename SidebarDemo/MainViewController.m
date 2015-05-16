@@ -10,11 +10,19 @@
 #import "SWRevealViewController.h"
 
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet UIView *modalView;
 
 
 @end
 
 @implementation MainViewController
+
+//- (BOOL)touchesShouldCancelInContentView:(UIView *)view {
+//    if ([view isKindOfClass:[UIButton class]]) {
+//        return true;
+//    }
+//    return false;
+//}
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     NSLog(@"拖动开始");
@@ -40,14 +48,18 @@
     [self.myScrollView addSubview:self.refreshView];
     self.myScrollView.contentSize = CGSizeMake(320, 548);
     self.myScrollView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
-
 }
 
+- (IBAction)checkButtonPressed:(id)sender {
+//    self.myScrollView.alpha = 1;
+    NSLog(@"button pressed!");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initScroll];
     
+    self.modalView.alpha = 0;
     self.title = @"News";
 
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -63,6 +75,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

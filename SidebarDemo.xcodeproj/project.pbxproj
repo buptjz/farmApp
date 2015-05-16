@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830FCA341B07A3B5003F4AA7 /* TouchPassScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 830FCA331B07A3B5003F4AA7 /* TouchPassScrollView.m */; };
 		831E4CF41B0789A500CB4EE0 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E4CF31B0789A500CB4EE0 /* RefreshView.m */; };
 		831E4CF61B078B0300CB4EE0 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831E4CF51B078B0300CB4EE0 /* Empty.xib */; };
 		835A3B221B077D1700808DCB /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835A3B211B077D1700808DCB /* ThirdViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		830FCA321B07A3B5003F4AA7 /* TouchPassScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchPassScrollView.h; sourceTree = "<group>"; };
+		830FCA331B07A3B5003F4AA7 /* TouchPassScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchPassScrollView.m; sourceTree = "<group>"; };
 		831E4CF21B0789A500CB4EE0 /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
 		831E4CF31B0789A500CB4EE0 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
 		831E4CF51B078B0300CB4EE0 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 		83F75B491AFF8C62008A27A8 /* Vs */ = {
 			isa = PBXGroup;
 			children = (
+				830FCA321B07A3B5003F4AA7 /* TouchPassScrollView.h */,
+				830FCA331B07A3B5003F4AA7 /* TouchPassScrollView.m */,
 				83F75B461AFF8BCC008A27A8 /* SecondViewController.h */,
 				83F75B471AFF8BCC008A27A8 /* SecondViewController.m */,
 				F4090BC11A0FD62A00651F6F /* MainViewController.h */,
@@ -283,6 +288,7 @@
 				F4090BC31A0FD62A00651F6F /* MainViewController.m in Sources */,
 				835A3B221B077D1700808DCB /* ThirdViewController.m in Sources */,
 				F4090B971A0F67D000651F6F /* AppDelegate.m in Sources */,
+				830FCA341B07A3B5003F4AA7 /* TouchPassScrollView.m in Sources */,
 				F4090BCA1A0FD76C00651F6F /* SWRevealViewController.m in Sources */,
 				83F75B481AFF8BCC008A27A8 /* SecondViewController.m in Sources */,
 				831E4CF41B0789A500CB4EE0 /* RefreshView.m in Sources */,
