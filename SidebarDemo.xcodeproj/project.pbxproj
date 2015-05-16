@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835A3B221B077D1700808DCB /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835A3B211B077D1700808DCB /* ThirdViewController.m */; };
+		835A3B251B077D2600808DCB /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835A3B241B077D2600808DCB /* FourthViewController.m */; };
 		83F75B481AFF8BCC008A27A8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F75B471AFF8BCC008A27A8 /* SecondViewController.m */; };
 		F4090B941A0F67D000651F6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090B931A0F67D000651F6F /* main.m */; };
 		F4090B971A0F67D000651F6F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090B961A0F67D000651F6F /* AppDelegate.m */; };
@@ -18,7 +20,6 @@
 		F4090BC31A0FD62A00651F6F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090BC21A0FD62A00651F6F /* MainViewController.m */; };
 		F4090BC61A0FD6F800651F6F /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090BC51A0FD6F800651F6F /* SidebarTableViewController.m */; };
 		F4090BCA1A0FD76C00651F6F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090BC91A0FD76C00651F6F /* SWRevealViewController.m */; };
-		F4090BCC1A10563200651F6F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4090BCB1A10563200651F6F /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		835A3B201B077D1700808DCB /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		835A3B211B077D1700808DCB /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		835A3B231B077D2600808DCB /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		835A3B241B077D2600808DCB /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		83F75B461AFF8BCC008A27A8 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		83F75B471AFF8BCC008A27A8 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		F4090B8E1A0F67D000651F6F /* SidebarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidebarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +58,6 @@
 		F4090BC51A0FD6F800651F6F /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarTableViewController.m; sourceTree = "<group>"; };
 		F4090BC81A0FD76C00651F6F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F4090BC91A0FD76C00651F6F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		F4090BCB1A10563200651F6F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4090BCC1A10563200651F6F /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,10 @@
 				F4090BC21A0FD62A00651F6F /* MainViewController.m */,
 				F4090BC41A0FD6F800651F6F /* SidebarTableViewController.h */,
 				F4090BC51A0FD6F800651F6F /* SidebarTableViewController.m */,
+				835A3B201B077D1700808DCB /* ThirdViewController.h */,
+				835A3B211B077D1700808DCB /* ThirdViewController.m */,
+				835A3B231B077D2600808DCB /* FourthViewController.h */,
+				835A3B241B077D2600808DCB /* FourthViewController.m */,
 			);
 			name = Vs;
 			sourceTree = "<group>";
@@ -92,7 +99,6 @@
 		F4090B851A0F67D000651F6F = {
 			isa = PBXGroup;
 			children = (
-				F4090BCB1A10563200651F6F /* MapKit.framework */,
 				F4090B901A0F67D000651F6F /* SidebarDemo */,
 				F4090BAA1A0F67D000651F6F /* SidebarDemoTests */,
 				F4090B8F1A0F67D000651F6F /* Products */,
@@ -266,9 +272,11 @@
 			files = (
 				F4090B9A1A0F67D000651F6F /* ViewController.m in Sources */,
 				F4090BC31A0FD62A00651F6F /* MainViewController.m in Sources */,
+				835A3B221B077D1700808DCB /* ThirdViewController.m in Sources */,
 				F4090B971A0F67D000651F6F /* AppDelegate.m in Sources */,
 				F4090BCA1A0FD76C00651F6F /* SWRevealViewController.m in Sources */,
 				83F75B481AFF8BCC008A27A8 /* SecondViewController.m in Sources */,
+				835A3B251B077D2600808DCB /* FourthViewController.m in Sources */,
 				F4090B941A0F67D000651F6F /* main.m in Sources */,
 				F4090BC61A0FD6F800651F6F /* SidebarTableViewController.m in Sources */,
 			);
