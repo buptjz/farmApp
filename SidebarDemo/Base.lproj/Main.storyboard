@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" id="RYf-i9-w71"/>
+                    <tabBarItem key="tabBarItem" title="农园" id="RYf-i9-w71"/>
                     <connections>
                         <segue destination="x2r-rU-PsL" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="fsX-Pn-ROa"/>
                         <segue destination="bvA-Gx-XPl" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="19h-AJ-iXZ"/>
@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3HY-c2-ZNy">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="3HY-c2-ZNy">
                                 <rect key="frame" x="0.0" y="164" width="320" height="448"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -213,7 +213,7 @@
             </objects>
             <point key="canvasLocation" x="-500" y="447"/>
         </scene>
-        <!--Second-->
+        <!--社区-->
         <scene sceneID="Yey-U7-Q2Y">
             <objects>
                 <viewController id="4gW-UO-aq8" customClass="SecondViewController" sceneMemberID="viewController">
@@ -222,13 +222,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" id="alL-au-MXg"/>
+                    <tabBarItem key="tabBarItem" title="社区" id="alL-au-MXg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-hj-xuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2" y="165"/>
         </scene>
-        <!--Third-->
+        <!--消息-->
         <scene sceneID="qTk-xh-2YU">
             <objects>
                 <viewController id="1LY-sC-I6U" customClass="ThirdViewController" sceneMemberID="viewController">
@@ -237,13 +237,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Third" id="38d-wF-3vh"/>
+                    <tabBarItem key="tabBarItem" title="消息" id="38d-wF-3vh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmn-BV-l4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-764" y="1177"/>
         </scene>
-        <!--Fourth-->
+        <!--我的-->
         <scene sceneID="Rh8-hg-zis">
             <objects>
                 <viewController id="pa2-sj-FKq" customClass="FourthViewController" sceneMemberID="viewController">
@@ -252,7 +252,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fourth" id="ajv-pX-gIq"/>
+                    <tabBarItem key="tabBarItem" title="我的" id="ajv-pX-gIq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ps6-pb-aAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

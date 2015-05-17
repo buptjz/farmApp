@@ -137,15 +137,15 @@
 		83F75B491AFF8C62008A27A8 /* Vs */ = {
 			isa = PBXGroup;
 			children = (
+				F4090BC41A0FD6F800651F6F /* SidebarTableViewController.h */,
+				F4090BC51A0FD6F800651F6F /* SidebarTableViewController.m */,
 				834B25D71B07A83F00027B5C /* WaterViewController.h */,
 				834B25D81B07A83F00027B5C /* WaterViewController.m */,
 				834B25D91B07A83F00027B5C /* WaterViewController.xib */,
-				83F75B461AFF8BCC008A27A8 /* SecondViewController.h */,
-				83F75B471AFF8BCC008A27A8 /* SecondViewController.m */,
 				F4090BC11A0FD62A00651F6F /* MainViewController.h */,
 				F4090BC21A0FD62A00651F6F /* MainViewController.m */,
-				F4090BC41A0FD6F800651F6F /* SidebarTableViewController.h */,
-				F4090BC51A0FD6F800651F6F /* SidebarTableViewController.m */,
+				83F75B461AFF8BCC008A27A8 /* SecondViewController.h */,
+				83F75B471AFF8BCC008A27A8 /* SecondViewController.m */,
 				835A3B201B077D1700808DCB /* ThirdViewController.h */,
 				835A3B211B077D1700808DCB /* ThirdViewController.m */,
 				835A3B231B077D2600808DCB /* FourthViewController.h */,
