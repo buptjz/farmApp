@@ -16,6 +16,8 @@
 //"http://api.yeelink.net/v1.1/device/18975/sensor/33104/datapoints"
 static NSString *BaseURLString = @"http://api.yeelink.net/v1.0/device/18975";
 
+static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/sensor/33034/datapoints";
+//static NSString *rawdata = @"{\"timestamp\":\"2015-05-17T20:28:14\", \"value\":233 }";
 
 @interface MainViewController ()
 
@@ -25,16 +27,42 @@ static NSString *BaseURLString = @"http://api.yeelink.net/v1.0/device/18975";
 
 @implementation MainViewController
 
--(void)postJsonData{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://api.yeelink.net/v1.1/device/18975/sensor/33096/datapoints"
-       parameters:@{@"apikey": @"f041c96ac09984620fb520ee9d439f9d"}
-     
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              NSLog(@"JSON: %@", responseObject);
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"Error: %@", error);
-          }];
+
+-(NSString *)assemblePostDataWithValue:(NSString *)value{
+    // 获取系统当前时间
+    NSDate * date = [NSDate date];
+    NSTimeInterval sec = [date timeIntervalSinceNow];
+    NSDate * currentDate = [[NSDate alloc] initWithTimeIntervalSinceNow:sec];
+    
+    //设置时间输出格式：
+    NSDateFormatter * df = [[NSDateFormatter alloc] init ];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];//:"2015-03-11 16:13:14"
+    NSString * na = [df stringFromDate:currentDate];
+    
+    NSString *retString = [NSString stringWithFormat: @"{\"timestamp\":\"%@\", \"value\":%@}",na,value];
+    NSLog(@"%@",retString);
+    
+    return retString;
+}
+
+-(void)postJsonDataToURL:(NSString *)urlString data:(NSString *) dataString{
+    NSURL *myURL = [NSURL URLWithString:myURLString];
+    NSLog(@"发送POST请求\n【url】=%@\n【raw_data】=%@",urlString,dataString);
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL
+                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData  timeoutInterval:10];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"f041c96ac09984620fb520ee9d439f9d" forHTTPHeaderField:@"U-ApiKey"];
+    [request setHTTPBody: [dataString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"JSON responseObject: %@ ",responseObject);
+        NSLog(@"upload data success!");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", [error localizedDescription]);
+    }];
+    [op start];
+    
 }
 
 
@@ -81,8 +109,10 @@ static NSString *BaseURLString = @"http://api.yeelink.net/v1.0/device/18975";
 //    NSLog(@"拖动结束");
     [self.refreshView isScrollViewEndDragging:scrollView_];
     if ([self.refreshView shouldLoad]) {
-        [self getJsonData];
-//        [self postJsonData];
+//        [self getJsonData];
+        
+        NSString *data = [self assemblePostDataWithValue:@"333"];
+        [self postJsonDataToURL:myURLString data:data];
     }
 }
 
