@@ -9,27 +9,81 @@
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import "WaterViewController.h"
+#import "AFNetworking.h"
+#import "DadaManager.h"
+
+
+//"http://api.yeelink.net/v1.1/device/18975/sensor/33104/datapoints"
+static NSString *BaseURLString = @"http://api.yeelink.net/v1.0/device/18975";
+
 
 @interface MainViewController ()
+
+@property(nonatomic,retain) NSMutableDictionary *sensors;
+
 @end
 
 @implementation MainViewController
 
+-(void)postJsonData{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:@"http://api.yeelink.net/v1.1/device/18975/sensor/33096/datapoints"
+       parameters:@{@"apikey": @"f041c96ac09984620fb520ee9d439f9d"}
+     
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"JSON: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"Error: %@", error);
+          }];
+}
+
+
+//获取json数据
+-(void)getJsonData{
+    //http://stackoverflow.com/questions/19114623/request-failed-unacceptable-content-type-text-html-using-afnetworking-2-0
+    NSString *sensor_id = @"33104";
+    NSString *string = [NSString stringWithFormat:@"%@/sensor/%@/datapoints", BaseURLString,sensor_id];
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSLog(@"发起json请求 == %@",url);
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *data_dic = (NSDictionary *)responseObject;
+        self.title = @"JSON Retrieved";
+        NSLog(@"%@",data_dic);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Json Get"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+    [operation start];
+}
+
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    NSLog(@"拖动开始");
+//    NSLog(@"拖动开始");
     NSLog(@"%f",self.myScrollView.contentOffset.y);
     [self.refreshView isScrollViewStartDragging:scrollView];
 }
 // 拖动过程中
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView_ {
-    NSLog(@"拖动过程");
+//    NSLog(@"拖动过程");
     [self.refreshView isScrollViewDragging:scrollView_];
 }
 // 拖动结束后
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView_ willDecelerate:(BOOL)decelerate {
-    NSLog(@"拖动结束");
+//    NSLog(@"拖动结束");
     [self.refreshView isScrollViewEndDragging:scrollView_];
+    if ([self.refreshView shouldLoad]) {
+        [self getJsonData];
+//        [self postJsonData];
+    }
 }
 
 -(void)initScroll{
@@ -54,6 +108,10 @@
     
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    [DadaManager SavaData:self.sensors];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initScroll];
@@ -65,6 +123,8 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+    
+    self.sensors = [DadaManager LoadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,7 +141,6 @@
     activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
     [self presentViewController:activityVC animated:TRUE completion:nil];
 }
-
 
 
 /*

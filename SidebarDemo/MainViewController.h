@@ -11,6 +11,7 @@
 
 @interface MainViewController : UIViewController<UIScrollViewDelegate>
 
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
 @property (nonatomic,retain) RefreshView *refreshView;

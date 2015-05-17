@@ -11,6 +11,15 @@
 @synthesize myLable;
 @synthesize myIndicator;
 @synthesize myArrowImage;
+
+-(BOOL)shouldLoad{
+    if (isShouldLoad) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
 -(void)loading:(UIScrollView *)scrollView
 {
     [UIView beginAnimations:nil context:NULL];

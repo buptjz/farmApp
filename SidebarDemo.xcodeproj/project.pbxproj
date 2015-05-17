@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B608D0B58DE1854C23AA6CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CA3910F15CF3E25FA3E83B /* libPods.a */; };
 		831E4CF41B0789A500CB4EE0 /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831E4CF31B0789A500CB4EE0 /* RefreshView.m */; };
 		831E4CF61B078B0300CB4EE0 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 831E4CF51B078B0300CB4EE0 /* Empty.xib */; };
-		8332042B1B07B2CA001C19CC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8332042A1B07B2CA001C19CC /* MapKit.framework */; };
 		834B25DA1B07A83F00027B5C /* WaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834B25D81B07A83F00027B5C /* WaterViewController.m */; };
 		834B25DB1B07A83F00027B5C /* WaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834B25D91B07A83F00027B5C /* WaterViewController.xib */; };
 		834B25DF1B07AEC100027B5C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834B25DE1B07AEC100027B5C /* SystemConfiguration.framework */; };
@@ -23,6 +23,8 @@
 		834B25EF1B07AF1F00027B5C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 834B25EE1B07AF1F00027B5C /* libsqlite3.dylib */; };
 		835A3B221B077D1700808DCB /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835A3B211B077D1700808DCB /* ThirdViewController.m */; };
 		835A3B251B077D2600808DCB /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835A3B241B077D2600808DCB /* FourthViewController.m */; };
+		83F6E2841B088CF700D823A6 /* sensor_states.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83F6E2831B088CF700D823A6 /* sensor_states.plist */; };
+		83F6E2871B088E9D00D823A6 /* DadaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6E2861B088E9D00D823A6 /* DadaManager.m */; };
 		83F75B481AFF8BCC008A27A8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F75B471AFF8BCC008A27A8 /* SecondViewController.m */; };
 		F4090B941A0F67D000651F6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090B931A0F67D000651F6F /* main.m */; };
 		F4090B971A0F67D000651F6F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090B961A0F67D000651F6F /* AppDelegate.m */; };
@@ -47,10 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C77C6CA5DF50FA1840CDA16 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6714020BCE411BC97FC1AD4B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		831E4CF21B0789A500CB4EE0 /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
 		831E4CF31B0789A500CB4EE0 /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
 		831E4CF51B078B0300CB4EE0 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
-		8332042A1B07B2CA001C19CC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		834B25D71B07A83F00027B5C /* WaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterViewController.h; sourceTree = "<group>"; };
 		834B25D81B07A83F00027B5C /* WaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterViewController.m; sourceTree = "<group>"; };
 		834B25D91B07A83F00027B5C /* WaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterViewController.xib; sourceTree = "<group>"; };
@@ -67,8 +70,12 @@
 		835A3B211B077D1700808DCB /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		835A3B231B077D2600808DCB /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		835A3B241B077D2600808DCB /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		83F6E2831B088CF700D823A6 /* sensor_states.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sensor_states.plist; sourceTree = "<group>"; };
+		83F6E2851B088E9D00D823A6 /* DadaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DadaManager.h; sourceTree = "<group>"; };
+		83F6E2861B088E9D00D823A6 /* DadaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DadaManager.m; sourceTree = "<group>"; };
 		83F75B461AFF8BCC008A27A8 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		83F75B471AFF8BCC008A27A8 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A4CA3910F15CF3E25FA3E83B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4090B8E1A0F67D000651F6F /* SidebarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidebarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4090B921A0F67D000651F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4090B931A0F67D000651F6F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,7 +104,6 @@
 			files = (
 				834B25EF1B07AF1F00027B5C /* libsqlite3.dylib in Frameworks */,
 				834B25ED1B07AF1800027B5C /* libstdc++.dylib in Frameworks */,
-				8332042B1B07B2CA001C19CC /* MapKit.framework in Frameworks */,
 				834B25EB1B07AF0A00027B5C /* ImageIO.framework in Frameworks */,
 				834B25E91B07AEEA00027B5C /* Security.framework in Frameworks */,
 				834B25E71B07AEE300027B5C /* libz.1.2.5.dylib in Frameworks */,
@@ -105,6 +111,7 @@
 				834B25E31B07AED400027B5C /* CoreTelephony.framework in Frameworks */,
 				834B25E11B07AECB00027B5C /* QuartzCore.framework in Frameworks */,
 				834B25DF1B07AEC100027B5C /* SystemConfiguration.framework in Frameworks */,
+				6B608D0B58DE1854C23AA6CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C3B8FE7208F377912D994C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C77C6CA5DF50FA1840CDA16 /* Pods.debug.xcconfig */,
+				6714020BCE411BC97FC1AD4B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		834B25F01B07AFA000027B5C /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,13 +170,22 @@
 			name = Vs;
 			sourceTree = "<group>";
 		};
+		AB416C687C26F8D50BC1C288 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4CA3910F15CF3E25FA3E83B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4090B851A0F67D000651F6F = {
 			isa = PBXGroup;
 			children = (
-				8332042A1B07B2CA001C19CC /* MapKit.framework */,
 				F4090B901A0F67D000651F6F /* SidebarDemo */,
 				F4090BAA1A0F67D000651F6F /* SidebarDemoTests */,
 				F4090B8F1A0F67D000651F6F /* Products */,
+				3C3B8FE7208F377912D994C9 /* Pods */,
+				AB416C687C26F8D50BC1C288 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +201,9 @@
 		F4090B901A0F67D000651F6F /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				83F6E2851B088E9D00D823A6 /* DadaManager.h */,
+				83F6E2861B088E9D00D823A6 /* DadaManager.m */,
+				83F6E2831B088CF700D823A6 /* sensor_states.plist */,
 				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
 				83F75B491AFF8C62008A27A8 /* Vs */,
 				834B25F01B07AFA000027B5C /* libs */,
@@ -236,9 +264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4090BB11A0F67D000651F6F /* Build configuration list for PBXNativeTarget "SidebarDemo" */;
 			buildPhases = (
+				6C9FE5B50D5400D6AF960E96 /* Check Pods Manifest.lock */,
 				F4090B8A1A0F67D000651F6F /* Sources */,
 				F4090B8B1A0F67D000651F6F /* Frameworks */,
 				F4090B8C1A0F67D000651F6F /* Resources */,
+				0C5DBADB885FA1FD6C2A19AC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,6 +348,7 @@
 				831E4CF61B078B0300CB4EE0 /* Empty.xib in Resources */,
 				834B25DB1B07A83F00027B5C /* WaterViewController.xib in Resources */,
 				F4090BA21A0F67D000651F6F /* LaunchScreen.xib in Resources */,
+				83F6E2841B088CF700D823A6 /* sensor_states.plist in Resources */,
 				F4090B9F1A0F67D000651F6F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +361,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C5DBADB885FA1FD6C2A19AC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C9FE5B50D5400D6AF960E96 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4090B8A1A0F67D000651F6F /* Sources */ = {
@@ -345,6 +409,7 @@
 				831E4CF41B0789A500CB4EE0 /* RefreshView.m in Sources */,
 				835A3B251B077D2600808DCB /* FourthViewController.m in Sources */,
 				F4090B941A0F67D000651F6F /* main.m in Sources */,
+				83F6E2871B088E9D00D823A6 /* DadaManager.m in Sources */,
 				F4090BC61A0FD6F800651F6F /* SidebarTableViewController.m in Sources */,
 				834B25DA1B07A83F00027B5C /* WaterViewController.m in Sources */,
 			);
@@ -466,6 +531,7 @@
 		};
 		F4090BB21A0F67D000651F6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C77C6CA5DF50FA1840CDA16 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -487,6 +553,7 @@
 		};
 		F4090BB31A0F67D000651F6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6714020BCE411BC97FC1AD4B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

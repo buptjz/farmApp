@@ -17,6 +17,8 @@
 @property(nonatomic,retain) IBOutlet UIActivityIndicatorView *myIndicator;
 @property(nonatomic,retain) IBOutlet UIImageView *myArrowImage;
 
+
+-(BOOL)shouldLoad;
 -(void)isScrollViewStartDragging:(UIScrollView *)scrollView;
 -(void)isScrollViewDragging:(UIScrollView *)scrollView;
 -(void)isScrollViewEndDragging:(UIScrollView *)scrollView;
