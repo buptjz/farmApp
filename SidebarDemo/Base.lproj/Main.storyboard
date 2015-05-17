@@ -95,7 +95,11 @@
                     <tabBarItem key="tabBarItem" title="Item" id="mJi-VX-UBQ"/>
                     <navigationItem key="navigationItem" id="PL4-ln-Z8C">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="DJB-Dc-VO5"/>
-                        <barButtonItem key="rightBarButtonItem" title="分享" id="m5L-P2-98y"/>
+                        <barButtonItem key="rightBarButtonItem" title="分享" id="m5L-P2-98y">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="Z2I-Sz-A3d" id="Fq0-rM-TRc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
