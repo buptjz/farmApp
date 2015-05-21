@@ -31,27 +31,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="3HY-c2-ZNy">
-                                <rect key="frame" x="0.0" y="164" width="320" height="448"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3HY-c2-ZNy">
+                                <rect key="frame" x="0.0" y="153" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="2MO-xE-rhj">
-                                        <rect key="frame" x="0.0" y="228" width="157" height="220"/>
+                                        <rect key="frame" x="0.0" y="235" width="157" height="220"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     </view>
                                     <view contentMode="scaleToFill" id="vvL-r5-x2g">
-                                        <rect key="frame" x="163" y="0.0" width="157" height="220"/>
+                                        <rect key="frame" x="163" y="7" width="157" height="220"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     </view>
                                     <view contentMode="scaleToFill" id="RUE-jg-VO3">
-                                        <rect key="frame" x="163" y="228" width="157" height="220"/>
+                                        <rect key="frame" x="163" y="235" width="157" height="220"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     </view>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YnW-eR-E8D">
-                                        <rect key="frame" x="55" y="65" width="46" height="30"/>
+                                        <rect key="frame" x="55" y="72" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,7 +61,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" id="VP1-8k-UaL">
-                                        <rect key="frame" x="0.0" y="0.0" width="157" height="220"/>
+                                        <rect key="frame" x="0.0" y="7" width="157" height="220"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9qX-pQ-M4Z">
@@ -74,6 +74,10 @@
                                                     <action selector="checkButtonPressed:" destination="Z2I-Sz-A3d" eventType="touchUpInside" id="r1w-Fa-gEe"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" id="uRg-IP-1Hj">
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="220"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     </view>
@@ -103,6 +107,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="lackWaterImage" destination="uRg-IP-1Hj" id="P7z-cv-UKS"/>
                         <outlet property="myScrollView" destination="3HY-c2-ZNy" id="REO-el-DsC"/>
                         <outlet property="sidebarButton" destination="DJB-Dc-VO5" id="S0X-A3-1V6"/>
                     </connections>
@@ -110,6 +115,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWP-sa-Vux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813" y="-117"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Sha-uY-rHA">
+            <objects>
+                <viewController id="A2K-b2-BUe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ihg-ub-mEN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="foa-Jp-vRA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nz0-Nb-Lfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="518"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RAA-LJ-Oq8">
@@ -237,7 +262,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="消息" id="38d-wF-3vh"/>
+                    <tabBarItem key="tabBarItem" title="消息" id="0ow-Fi-FHa"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmn-BV-l4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

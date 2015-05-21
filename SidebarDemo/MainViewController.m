@@ -11,7 +11,8 @@
 #import "WaterViewController.h"
 #import "AFNetworking.h"
 #import "DadaManager.h"
-
+#import "Constant.h"
+#import "SVPullToRefresh.h"
 
 //"http://api.yeelink.net/v1.1/device/18975/sensor/33104/datapoints"
 static NSString *BaseURLString = @"http://api.yeelink.net/v1.0/device/18975";
@@ -22,10 +23,35 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 @interface MainViewController ()
 
 @property(nonatomic,retain) NSMutableDictionary *sensors;
+@property (weak, nonatomic) IBOutlet UIImageView *lackWaterImage;
 
 @end
 
 @implementation MainViewController
+
+-(void)nolackWaterTriggering{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:3 animations:^(void){
+            self.lackWaterImage.alpha = 0.0;
+        }completion:^(BOOL finished){
+            //            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 40, 40)];
+            //            label.backgroundColor = [UIColor blackColor];
+            //            [self.view addSubview:label];
+        }];
+    });
+}
+
+-(void)lackWaterTriggering{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:3 animations:^(void){
+            self.lackWaterImage.alpha = 1;
+        }completion:^(BOOL finished){
+//            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 40, 40)];
+//            label.backgroundColor = [UIColor blackColor];
+//            [self.view addSubview:label];
+        }];
+    });
+}
 
 
 -(NSString *)assemblePostDataWithValue:(NSString *)value{
@@ -96,45 +122,44 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
 //    NSLog(@"拖动开始");
-    NSLog(@"%f",self.myScrollView.contentOffset.y);
-    [self.refreshView isScrollViewStartDragging:scrollView];
+    self.myScrollView.showsPullToRefresh = YES;
 }
-// 拖动过程中
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView_ {
 //    NSLog(@"拖动过程");
-    [self.refreshView isScrollViewDragging:scrollView_];
 }
-// 拖动结束后
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView_ willDecelerate:(BOOL)decelerate {
-//    NSLog(@"拖动结束");
-    [self.refreshView isScrollViewEndDragging:scrollView_];
-    if ([self.refreshView shouldLoad]) {
-//        [self getJsonData];
-        
-        NSString *data = [self assemblePostDataWithValue:@"333"];
-        [self postJsonDataToURL:myURLString data:data];
-    }
+    self.myScrollView.showsPullToRefresh = NO;
+    NSString *data = [self assemblePostDataWithValue:@"333"];
+    [self postJsonDataToURL:myURLString data:data];
 }
 
 -(void)initScroll{
-    NSArray *nils = [[NSBundle mainBundle]loadNibNamed:@"Empty" owner:self options:nil];
-    self.refreshView =[nils objectAtIndex:0];
-    self.refreshView.frame = CGRectMake(0, -50, 320, 50);
-    //refreshView.backgroundColor = [UIColor redColor];
-    [self.myScrollView addSubview:self.refreshView];
-    self.myScrollView.contentSize = CGSizeMake(320, 548);
-    self.myScrollView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
+//    NSArray *nils = [[NSBundle mainBundle]loadNibNamed:@"Empty" owner:self options:nil];
+//    self.refreshView =[nils objectAtIndex:0];
+//    self.refreshView.frame = CGRectMake(0, -50, 320, 50);
+//    //refreshView.backgroundColor = [UIColor redColor];
+//    [self.myScrollView addSubview:self.refreshView];
+    self.myScrollView.contentSize = CGSizeMake(320, 498);
+    self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    
+    [self.myScrollView addPullToRefreshWithActionHandler:^{
+        // prepend data to dataSource, insert cells at top of table view
+        // call [tableView.pullToRefreshView stopAnimating] when done
+    }];
 }
 
 - (IBAction)checkButtonPressed:(id)sender {
     //http://www.jianshu.com/p/bf3325111fe5
     
     NSLog(@"button pressed!");
-    WaterViewController * testVC = [[WaterViewController alloc]init];
-    self.definesPresentationContext = YES; //self is presenting view controller
-    testVC.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
-    testVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    [self presentViewController:testVC animated:YES completion:nil];
+    [self lackWaterTriggering];
+//    WaterViewController * testVC = [[WaterViewController alloc]init];
+//    self.definesPresentationContext = YES; //self is presenting view controller
+//    testVC.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
+//    testVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//    [self presentViewController:testVC animated:YES completion:nil];
     
 }
 
@@ -145,7 +170,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initScroll];
-    self.title = @"News";
+    self.title = FIRSTPAGETITLE;
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -172,15 +197,5 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     [self presentViewController:activityVC animated:TRUE completion:nil];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -70,6 +70,7 @@
 		835A3B211B077D1700808DCB /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		835A3B231B077D2600808DCB /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		835A3B241B077D2600808DCB /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		83D856361B0E166000701B55 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		83F6E2831B088CF700D823A6 /* sensor_states.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sensor_states.plist; sourceTree = "<group>"; };
 		83F6E2851B088E9D00D823A6 /* DadaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DadaManager.h; sourceTree = "<group>"; };
 		83F6E2861B088E9D00D823A6 /* DadaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DadaManager.m; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 		F4090B901A0F67D000651F6F /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				83D856361B0E166000701B55 /* Constant.h */,
 				83F6E2851B088E9D00D823A6 /* DadaManager.h */,
 				83F6E2861B088E9D00D823A6 /* DadaManager.m */,
 				83F6E2831B088CF700D823A6 /* sensor_states.plist */,
