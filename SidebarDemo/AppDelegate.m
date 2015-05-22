@@ -17,7 +17,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor orangeColor];
+    //unselected icon tint color
+//    [[UIView appearanceWhenContainedIn:[UITabBar class], nil] setTintColor:[UIColor redColor]];
+    
+    //selected tint color
+    UIColor *tintColor = [UIColor colorWithRed:157/255.0 green:185/255.0 blue:53/255.0 alpha:1];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance]setBackgroundColor:tintColor];
+//    [[UINavigationBar appearance]setB:tintColor];
+    [[UITabBar appearance] setTintColor:tintColor];
+    
+    //text tint color
+
+//    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor],
+//                                                       NSForegroundColorAttributeName, nil]forState:UIControlStateNormal];
+    
+    //background tint color
+//    [[UITabBar appearance] setBarTintColor:[UIColor blueColor]];
+    
     return YES;
 }
 

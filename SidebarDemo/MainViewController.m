@@ -80,9 +80,16 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     [DadaManager SavaData:self.sensors];
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     self.title = FIRSTPAGETITLE;
+
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
+                                                       NSForegroundColorAttributeName, nil]];
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -172,6 +179,27 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     NSString *retString = [NSString stringWithFormat: @"{\"timestamp\":\"%@\", \"value\":%@}",na,value];
     NSLog(@"%@",retString);
     return retString;
+}
+
+- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    navBarHairlineImageView.hidden = YES;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    navBarHairlineImageView.hidden = NO;
 }
 
 @end

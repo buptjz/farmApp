@@ -31,15 +31,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="农场状态信息列表" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8xm-Wa-eHS">
-                                <rect key="frame" x="80" y="75" width="160" height="28"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg 余下部分" id="6cy-3j-gHY">
+                                <rect key="frame" x="0.0" y="63" width="320" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Mbh-eU-u4C">
-                                <rect key="frame" x="-1" y="61" width="321" height="457"/>
+                                <rect key="frame" x="0.0" y="219" width="321" height="457"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0kn-pr-wLT" userLabel="11">
@@ -69,8 +66,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="农园" image="1农园（未选中）" id="mJi-VX-UBQ"/>
                     <navigationItem key="navigationItem" id="PL4-ln-Z8C">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="DJB-Dc-VO5"/>
-                        <barButtonItem key="rightBarButtonItem" title="分享" id="m5L-P2-98y">
+                        <barButtonItem key="leftBarButtonItem" image="顶－个人账户" id="DJB-Dc-VO5"/>
+                        <barButtonItem key="rightBarButtonItem" image="顶－share" id="m5L-P2-98y">
                             <connections>
                                 <action selector="shareButtonPressed:" destination="Z2I-Sz-A3d" id="Fq0-rM-TRc"/>
                             </connections>
@@ -291,8 +288,10 @@
         <image name="2社区（未选中）" width="30" height="30"/>
         <image name="3消息（未选中）" width="30" height="30"/>
         <image name="4菜篮（未选中）" width="30" height="30"/>
-        <image name="menu" width="22" height="22"/>
+        <image name="bg 余下部分" width="320" height="153"/>
         <image name="news" width="1024" height="1024"/>
+        <image name="顶－share" width="22" height="22"/>
+        <image name="顶－个人账户" width="22" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -202,10 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				F4090B9E1A0F67D000651F6F /* Images.xcassets */,
-				83F1AF8B1B0F562600B65023 /* SWRevealViewController.h */,
-				83F1AF8C1B0F562600B65023 /* SWRevealViewController.m */,
 				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
 				F4090BC21A0FD62A00651F6F /* MainViewController.m */,
+				F4090B961A0F67D000651F6F /* AppDelegate.m */,
 				83F75B491AFF8C62008A27A8 /* Vs */,
 				834B25F01B07AFA000027B5C /* libs */,
 				F4090B911A0F67D000651F6F /* Supporting Files */,
@@ -216,6 +215,8 @@
 		F4090B911A0F67D000651F6F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83F1AF8B1B0F562600B65023 /* SWRevealViewController.h */,
+				83F1AF8C1B0F562600B65023 /* SWRevealViewController.m */,
 				83D856361B0E166000701B55 /* Constant.h */,
 				83F6E2851B088E9D00D823A6 /* DadaManager.h */,
 				83F6E2861B088E9D00D823A6 /* DadaManager.m */,
@@ -224,7 +225,6 @@
 				831E4CF31B0789A500CB4EE0 /* RefreshView.m */,
 				831E4CF51B078B0300CB4EE0 /* Empty.xib */,
 				F4090B951A0F67D000651F6F /* AppDelegate.h */,
-				F4090B961A0F67D000651F6F /* AppDelegate.m */,
 				F4090B981A0F67D000651F6F /* ViewController.h */,
 				F4090B991A0F67D000651F6F /* ViewController.m */,
 				F4090BA01A0F67D000651F6F /* LaunchScreen.xib */,

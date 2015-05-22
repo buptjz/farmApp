@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RefreshView.h"
 
-@interface MainViewController : UIViewController<UIScrollViewDelegate>
-
-
+@interface MainViewController : UIViewController<UIScrollViewDelegate>{
+    UIImageView *navBarHairlineImageView;
+}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
 
