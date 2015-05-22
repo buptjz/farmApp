@@ -25,6 +25,10 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 @property(nonatomic,retain) NSDictionary *sensors;
 @property (weak, nonatomic) IBOutlet UIImageView *lackWaterImage;
 @property (nonatomic) BOOL lackWater;
+@property (weak, nonatomic) IBOutlet UILabel *m1label;
+@property (weak, nonatomic) IBOutlet UILabel *m2label;
+@property (weak, nonatomic) IBOutlet UILabel *m3label;
+@property (weak, nonatomic) IBOutlet UILabel *top_label;
 
 @end
 
@@ -83,7 +87,13 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        self.title = FIRSTPAGETITLE;
+    
+    self.top_label.font = [UIFont fontWithName:FONT_CU size:18];
+    self.m1label.font = [UIFont fontWithName:FONT_CU size:21];
+    self.m2label.font = [UIFont fontWithName:FONT_CU size:21];
+    self.m3label.font = [UIFont fontWithName:FONT_CU size:21];
+    
+    self.title = FIRSTPAGETITLE;
     
     navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
