@@ -205,6 +205,7 @@
 				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
 				F4090BC21A0FD62A00651F6F /* MainViewController.m */,
 				F4090B961A0F67D000651F6F /* AppDelegate.m */,
+				F4090B921A0F67D000651F6F /* Info.plist */,
 				83F75B491AFF8C62008A27A8 /* Vs */,
 				834B25F01B07AFA000027B5C /* libs */,
 				F4090B911A0F67D000651F6F /* Supporting Files */,
@@ -228,7 +229,6 @@
 				F4090B981A0F67D000651F6F /* ViewController.h */,
 				F4090B991A0F67D000651F6F /* ViewController.m */,
 				F4090BA01A0F67D000651F6F /* LaunchScreen.xib */,
-				F4090B921A0F67D000651F6F /* Info.plist */,
 				F4090B931A0F67D000651F6F /* main.m */,
 			);
 			name = "Supporting Files";

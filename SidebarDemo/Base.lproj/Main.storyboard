@@ -31,12 +31,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg 余下部分" id="6cy-3j-gHY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg+温湿度光照度new" id="6cy-3j-gHY">
                                 <rect key="frame" x="0.0" y="63" width="320" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Mbh-eU-u4C">
-                                <rect key="frame" x="0.0" y="219" width="321" height="457"/>
+                                <rect key="frame" x="0.0" y="215" width="321" height="457"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0kn-pr-wLT" userLabel="11">
@@ -288,7 +288,7 @@
         <image name="2社区（未选中）" width="30" height="30"/>
         <image name="3消息（未选中）" width="30" height="30"/>
         <image name="4菜篮（未选中）" width="30" height="30"/>
-        <image name="bg 余下部分" width="320" height="153"/>
+        <image name="bg+温湿度光照度new" width="640" height="306"/>
         <image name="news" width="1024" height="1024"/>
         <image name="顶－share" width="22" height="22"/>
         <image name="顶－个人账户" width="22" height="22"/>
