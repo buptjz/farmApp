@@ -31,61 +31,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3HY-c2-ZNy">
-                                <rect key="frame" x="0.0" y="153" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" id="2MO-xE-rhj">
-                                        <rect key="frame" x="0.0" y="235" width="157" height="220"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="vvL-r5-x2g">
-                                        <rect key="frame" x="163" y="7" width="157" height="220"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="RUE-jg-VO3">
-                                        <rect key="frame" x="163" y="235" width="157" height="220"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                                    </view>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YnW-eR-E8D">
-                                        <rect key="frame" x="55" y="72" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="checkButtonPressed:" destination="Z2I-Sz-A3d" eventType="touchUpInside" id="RIE-Sr-7Ws"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" id="VP1-8k-UaL">
-                                        <rect key="frame" x="0.0" y="7" width="157" height="220"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9qX-pQ-M4Z">
-                                                <rect key="frame" x="0.0" y="190" width="157" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="checkButtonPressed:" destination="Z2I-Sz-A3d" eventType="touchUpInside" id="r1w-Fa-gEe"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" id="uRg-IP-1Hj">
-                                                <rect key="frame" x="0.0" y="0.0" width="157" height="220"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
-                                    </view>
-                                </subviews>
-                                <connections>
-                                    <outlet property="delegate" destination="Z2I-Sz-A3d" id="5BP-Vd-Yf8"/>
-                                </connections>
-                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="农场状态信息列表" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8xm-Wa-eHS">
                                 <rect key="frame" x="80" y="75" width="160" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -93,6 +38,32 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Mbh-eU-u4C">
+                                <rect key="frame" x="-1" y="61" width="321" height="457"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0kn-pr-wLT" userLabel="11">
+                                        <rect key="frame" x="8" y="44" width="147" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" id="BQc-G1-pZQ" userLabel="12">
+                                        <rect key="frame" x="166" y="44" width="147" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" id="7Hr-FN-gsg" userLabel="12">
+                                        <rect key="frame" x="8" y="276" width="147" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" id="nYc-GX-yLZ" userLabel="water">
+                                        <rect key="frame" x="8" y="44" width="147" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" id="ZpH-xp-WWI" userLabel="12">
+                                        <rect key="frame" x="166" y="276" width="147" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -107,8 +78,8 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="lackWaterImage" destination="uRg-IP-1Hj" id="P7z-cv-UKS"/>
-                        <outlet property="myScrollView" destination="3HY-c2-ZNy" id="REO-el-DsC"/>
+                        <outlet property="lackWaterImage" destination="nYc-GX-yLZ" id="ITf-Mf-eay"/>
+                        <outlet property="myScrollView" destination="Mbh-eU-u4C" id="OhL-6c-mtj"/>
                         <outlet property="sidebarButton" destination="DJB-Dc-VO5" id="S0X-A3-1V6"/>
                     </connections>
                 </viewController>
@@ -215,7 +186,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCz-Kj-4H8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="475" y="-761"/>
+            <point key="canvasLocation" x="420" y="-753"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0zB-gZ-b9k">
@@ -300,7 +271,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sfe-3o-uiT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="10"/>
+            <point key="canvasLocation" x="420" y="-21"/>
         </scene>
     </scenes>
     <resources>
@@ -314,6 +285,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="19h-AJ-iXZ"/>
+        <segue reference="1iP-pg-36s"/>
     </inferredMetricsTieBreakers>
 </document>

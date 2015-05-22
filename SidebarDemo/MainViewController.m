@@ -22,21 +22,38 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 @interface MainViewController ()
 
-@property(nonatomic,retain) NSMutableDictionary *sensors;
+@property(nonatomic,retain) NSDictionary *sensors;
 @property (weak, nonatomic) IBOutlet UIImageView *lackWaterImage;
+@property (nonatomic) BOOL lackWater;
 
 @end
 
 @implementation MainViewController
+
+-(void)setLackWater:(BOOL)lackWater{
+    if (_lackWater == lackWater)
+        return;
+    if (lackWater == true) {
+        [self lackWaterTriggering];
+    }else{
+        [self nolackWaterTriggering];
+    }
+}
+
+-(void)setSensors:(NSDictionary *)sensors{
+    //随着sendor的改变，调整视图
+    if ([[sensors valueForKey:@"value"] intValue] == 1) {
+        self.lackWater = true;
+    }else{
+        self.lackWater = false;
+    }
+}
 
 -(void)nolackWaterTriggering{
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:3 animations:^(void){
             self.lackWaterImage.alpha = 0.0;
         }completion:^(BOOL finished){
-            //            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 40, 40)];
-            //            label.backgroundColor = [UIColor blackColor];
-            //            [self.view addSubview:label];
         }];
     });
 }
@@ -44,34 +61,59 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 -(void)lackWaterTriggering{
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:3 animations:^(void){
-            self.lackWaterImage.alpha = 1;
+            self.lackWaterImage.alpha = 0.5;
         }completion:^(BOOL finished){
-//            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 40, 40)];
-//            label.backgroundColor = [UIColor blackColor];
-//            [self.view addSubview:label];
         }];
     });
 }
 
-
--(NSString *)assemblePostDataWithValue:(NSString *)value{
-    // 获取系统当前时间
-    NSDate * date = [NSDate date];
-    NSTimeInterval sec = [date timeIntervalSinceNow];
-    NSDate * currentDate = [[NSDate alloc] initWithTimeIntervalSinceNow:sec];
-    
-    //设置时间输出格式：
-    NSDateFormatter * df = [[NSDateFormatter alloc] init ];
-    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];//:"2015-03-11 16:13:14"
-    NSString * na = [df stringFromDate:currentDate];
-    
-    NSString *retString = [NSString stringWithFormat: @"{\"timestamp\":\"%@\", \"value\":%@}",na,value];
-    NSLog(@"%@",retString);
-    
-    return retString;
+-(IBAction)waterButtonPressed:(id)sender {
+    //http://www.jianshu.com/p/bf3325111fe5
+    WaterViewController * testVC = [[WaterViewController alloc]init];
+    self.definesPresentationContext = YES; //self is presenting view controller
+    testVC.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
+    testVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:testVC animated:YES completion:nil];
 }
 
--(void)postJsonDataToURL:(NSString *)urlString data:(NSString *) dataString{
+-(void)viewDidDisappear:(BOOL)animated{
+    [DadaManager SavaData:self.sensors];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = FIRSTPAGETITLE;
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.sidebarButton setTarget: self.revealViewController];
+        [self.sidebarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+    self.sensors = [DadaManager LoadData];
+    
+    self.myScrollView.contentSize = CGSizeMake(320, 498);
+    self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    [self.myScrollView addPullToRefreshWithActionHandler:^{
+        [self get_data];
+    }];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (IBAction)shareButtonPressed:(id)sender {
+    NSLog(@"shareButton pressed");
+    NSString *texttoshare = @"分享"; //this is your text string to share
+    UIImage *imagetoshare = [UIImage imageNamed:@"1.png"]; //this is your image to share
+    NSArray *activityItems = @[texttoshare, imagetoshare];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
+    [self presentViewController:activityVC animated:TRUE completion:nil];
+}
+
+-(void)send_data:(NSString *)urlString data:(NSString *) dataString{
     NSURL *myURL = [NSURL URLWithString:myURLString];
     NSLog(@"发送POST请求\n【url】=%@\n【raw_data】=%@",urlString,dataString);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL
@@ -82,7 +124,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"JSON responseObject: %@ ",responseObject);
+        //        NSLog(@"JSON responseObject: %@ ",responseObject);
         NSLog(@"upload data success!");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", [error localizedDescription]);
@@ -92,8 +134,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 }
 
 
-//获取json数据
--(void)getJsonData{
+-(void)get_data{
     //http://stackoverflow.com/questions/19114623/request-failed-unacceptable-content-type-text-html-using-afnetworking-2-0
     NSString *sensor_id = @"33104";
     NSString *string = [NSString stringWithFormat:@"%@/sensor/%@/datapoints", BaseURLString,sensor_id];
@@ -105,9 +146,9 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *data_dic = (NSDictionary *)responseObject;
-        self.title = @"JSON Retrieved";
         NSLog(@"%@",data_dic);
-        
+        self.sensors = data_dic;
+        [self.myScrollView.pullToRefreshView stopAnimating];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Json Get"
                                                             message:[error localizedDescription]
@@ -119,83 +160,18 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     [operation start];
 }
 
-
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    NSLog(@"拖动开始");
-    self.myScrollView.showsPullToRefresh = YES;
+-(NSString *)assemblePostDataWithValue:(NSString *)value{
+    // 获取系统当前时间
+    NSDate * date = [NSDate date];
+    NSTimeInterval sec = [date timeIntervalSinceNow];
+    NSDate * currentDate = [[NSDate alloc] initWithTimeIntervalSinceNow:sec];
+    //设置时间输出格式：
+    NSDateFormatter * df = [[NSDateFormatter alloc] init ];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];//:"2015-03-11 16:13:14"
+    NSString * na = [df stringFromDate:currentDate];
+    NSString *retString = [NSString stringWithFormat: @"{\"timestamp\":\"%@\", \"value\":%@}",na,value];
+    NSLog(@"%@",retString);
+    return retString;
 }
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView_ {
-//    NSLog(@"拖动过程");
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView_ willDecelerate:(BOOL)decelerate {
-    self.myScrollView.showsPullToRefresh = NO;
-    NSString *data = [self assemblePostDataWithValue:@"333"];
-    [self postJsonDataToURL:myURLString data:data];
-}
-
--(void)initScroll{
-//    NSArray *nils = [[NSBundle mainBundle]loadNibNamed:@"Empty" owner:self options:nil];
-//    self.refreshView =[nils objectAtIndex:0];
-//    self.refreshView.frame = CGRectMake(0, -50, 320, 50);
-//    //refreshView.backgroundColor = [UIColor redColor];
-//    [self.myScrollView addSubview:self.refreshView];
-    self.myScrollView.contentSize = CGSizeMake(320, 498);
-    self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    
-    [self.myScrollView addPullToRefreshWithActionHandler:^{
-        // prepend data to dataSource, insert cells at top of table view
-        // call [tableView.pullToRefreshView stopAnimating] when done
-    }];
-}
-
-- (IBAction)checkButtonPressed:(id)sender {
-    //http://www.jianshu.com/p/bf3325111fe5
-    
-    NSLog(@"button pressed!");
-    [self lackWaterTriggering];
-//    WaterViewController * testVC = [[WaterViewController alloc]init];
-//    self.definesPresentationContext = YES; //self is presenting view controller
-//    testVC.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
-//    testVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-//    [self presentViewController:testVC animated:YES completion:nil];
-    
-}
-
--(void)viewDidDisappear:(BOOL)animated{
-    [DadaManager SavaData:self.sensors];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self initScroll];
-    self.title = FIRSTPAGETITLE;
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.sidebarButton setTarget: self.revealViewController];
-        [self.sidebarButton setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
-    
-    self.sensors = [DadaManager LoadData];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (IBAction)shareButtonPressed:(id)sender {
-    NSLog(@"shareButton pressed");
-    NSString *texttoshare = @"分享"; //this is your text string to share
-    UIImage *imagetoshare = [UIImage imageNamed:@"1.png"]; //this is your image to share
-    
-    NSArray *activityItems = @[texttoshare, imagetoshare];
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-    activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
-    [self presentViewController:activityVC animated:TRUE completion:nil];
-}
-
 
 @end
