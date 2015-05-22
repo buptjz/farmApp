@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="农园" id="RYf-i9-w71"/>
+                    <tabBarItem key="tabBarItem" title="农园" image="1农园（未选中）" id="RYf-i9-w71"/>
                     <connections>
                         <segue destination="x2r-rU-PsL" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="fsX-Pn-ROa"/>
                         <segue destination="bvA-Gx-XPl" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="19h-AJ-iXZ"/>
@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-2" y="-551"/>
         </scene>
-        <!--Item-->
+        <!--农园-->
         <scene sceneID="jZ6-Nu-3CT">
             <objects>
                 <viewController id="Z2I-Sz-A3d" customClass="MainViewController" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="mJi-VX-UBQ"/>
+                    <tabBarItem key="tabBarItem" title="农园" image="1农园（未选中）" id="mJi-VX-UBQ"/>
                     <navigationItem key="navigationItem" id="PL4-ln-Z8C">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="DJB-Dc-VO5"/>
                         <barButtonItem key="rightBarButtonItem" title="分享" id="m5L-P2-98y">
@@ -218,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="社区" id="alL-au-MXg"/>
+                    <tabBarItem key="tabBarItem" title="社区" image="2社区（未选中）" id="alL-au-MXg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-hj-xuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,9 +231,20 @@
                     <view key="view" contentMode="scaleToFill" id="tJn-DE-k3L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Nzb-xB-stw">
+                                <rect key="frame" x="0.0" y="65" width="320" height="456"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1LY-sC-I6U" id="NXp-X5-SQi"/>
+                                    <outlet property="delegate" destination="1LY-sC-I6U" id="q7D-LA-3eh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="消息" id="0ow-Fi-FHa"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="3消息（未选中）" id="0ow-Fi-FHa"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmn-BV-l4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,7 +260,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我的" id="ajv-pX-gIq"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="4菜篮（未选中）" id="ajv-pX-gIq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ps6-pb-aAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,6 +287,10 @@
     </scenes>
     <resources>
         <image name="1" width="194" height="230"/>
+        <image name="1农园（未选中）" width="30" height="30"/>
+        <image name="2社区（未选中）" width="30" height="30"/>
+        <image name="3消息（未选中）" width="30" height="30"/>
+        <image name="4菜篮（未选中）" width="30" height="30"/>
         <image name="menu" width="22" height="22"/>
         <image name="news" width="1024" height="1024"/>
     </resources>
@@ -285,6 +300,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1iP-pg-36s"/>
+        <segue reference="19h-AJ-iXZ"/>
     </inferredMetricsTieBreakers>
 </document>

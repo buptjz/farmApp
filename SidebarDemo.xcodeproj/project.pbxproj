@@ -23,6 +23,7 @@
 		834B25EF1B07AF1F00027B5C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 834B25EE1B07AF1F00027B5C /* libsqlite3.dylib */; };
 		835A3B221B077D1700808DCB /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835A3B211B077D1700808DCB /* ThirdViewController.m */; };
 		835A3B251B077D2600808DCB /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835A3B241B077D2600808DCB /* FourthViewController.m */; };
+		83F1AF8D1B0F562600B65023 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1AF8C1B0F562600B65023 /* SWRevealViewController.m */; };
 		83F6E2841B088CF700D823A6 /* sensor_states.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83F6E2831B088CF700D823A6 /* sensor_states.plist */; };
 		83F6E2871B088E9D00D823A6 /* DadaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F6E2861B088E9D00D823A6 /* DadaManager.m */; };
 		83F75B481AFF8BCC008A27A8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F75B471AFF8BCC008A27A8 /* SecondViewController.m */; };
@@ -35,7 +36,6 @@
 		F4090BAE1A0F67D000651F6F /* SidebarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090BAD1A0F67D000651F6F /* SidebarDemoTests.m */; };
 		F4090BC31A0FD62A00651F6F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090BC21A0FD62A00651F6F /* MainViewController.m */; };
 		F4090BC61A0FD6F800651F6F /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090BC51A0FD6F800651F6F /* SidebarTableViewController.m */; };
-		F4090BCA1A0FD76C00651F6F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090BC91A0FD76C00651F6F /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +71,8 @@
 		835A3B231B077D2600808DCB /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		835A3B241B077D2600808DCB /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		83D856361B0E166000701B55 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		83F1AF8B1B0F562600B65023 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		83F1AF8C1B0F562600B65023 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		83F6E2831B088CF700D823A6 /* sensor_states.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sensor_states.plist; sourceTree = "<group>"; };
 		83F6E2851B088E9D00D823A6 /* DadaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DadaManager.h; sourceTree = "<group>"; };
 		83F6E2861B088E9D00D823A6 /* DadaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DadaManager.m; sourceTree = "<group>"; };
@@ -94,8 +96,6 @@
 		F4090BC21A0FD62A00651F6F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		F4090BC41A0FD6F800651F6F /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarTableViewController.h; sourceTree = "<group>"; };
 		F4090BC51A0FD6F800651F6F /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarTableViewController.m; sourceTree = "<group>"; };
-		F4090BC81A0FD76C00651F6F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		F4090BC91A0FD76C00651F6F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,11 +202,12 @@
 			isa = PBXGroup;
 			children = (
 				F4090B9E1A0F67D000651F6F /* Images.xcassets */,
+				83F1AF8B1B0F562600B65023 /* SWRevealViewController.h */,
+				83F1AF8C1B0F562600B65023 /* SWRevealViewController.m */,
 				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
 				F4090BC21A0FD62A00651F6F /* MainViewController.m */,
 				83F75B491AFF8C62008A27A8 /* Vs */,
 				834B25F01B07AFA000027B5C /* libs */,
-				F4090BC71A0FD74700651F6F /* SWRevealViewController */,
 				F4090B911A0F67D000651F6F /* Supporting Files */,
 			);
 			path = SidebarDemo;
@@ -248,15 +249,6 @@
 				F4090BAC1A0F67D000651F6F /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F4090BC71A0FD74700651F6F /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F4090BC81A0FD76C00651F6F /* SWRevealViewController.h */,
-				F4090BC91A0FD76C00651F6F /* SWRevealViewController.m */,
-			);
-			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +398,6 @@
 				F4090BC31A0FD62A00651F6F /* MainViewController.m in Sources */,
 				835A3B221B077D1700808DCB /* ThirdViewController.m in Sources */,
 				F4090B971A0F67D000651F6F /* AppDelegate.m in Sources */,
-				F4090BCA1A0FD76C00651F6F /* SWRevealViewController.m in Sources */,
 				83F75B481AFF8BCC008A27A8 /* SecondViewController.m in Sources */,
 				831E4CF41B0789A500CB4EE0 /* RefreshView.m in Sources */,
 				835A3B251B077D2600808DCB /* FourthViewController.m in Sources */,
@@ -414,6 +405,7 @@
 				83F6E2871B088E9D00D823A6 /* DadaManager.m in Sources */,
 				F4090BC61A0FD6F800651F6F /* SidebarTableViewController.m in Sources */,
 				834B25DA1B07A83F00027B5C /* WaterViewController.m in Sources */,
+				83F1AF8D1B0F562600B65023 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
