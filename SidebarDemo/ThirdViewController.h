@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ThirdViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ThirdViewController : UIViewController<UIScrollViewDelegate>{
+    UIImageView *navBarHairlineImageView;
+}
 
-@property (strong, nonatomic) NSArray *list;
+@property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
+
+//@property (strong, nonatomic) NSArray *list;
 
 @end

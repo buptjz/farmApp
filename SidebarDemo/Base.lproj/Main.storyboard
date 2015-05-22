@@ -272,7 +272,7 @@
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="keE-r9-hQ9"/>
                         <segue destination="4gW-UO-aq8" kind="relationship" relationship="viewControllers" id="F7x-wK-xhM"/>
-                        <segue destination="1LY-sC-I6U" kind="relationship" relationship="viewControllers" id="349-lN-vZN"/>
+                        <segue destination="v2o-U5-che" kind="relationship" relationship="viewControllers" id="K11-Ea-GFY"/>
                         <segue destination="pa2-sj-FKq" kind="relationship" relationship="viewControllers" id="Xsw-eQ-CSU"/>
                     </connections>
                 </tabBarController>
@@ -296,6 +296,23 @@
             <point key="canvasLocation" x="-2" y="165"/>
         </scene>
         <!--消息-->
+        <scene sceneID="vhG-0J-I7f">
+            <objects>
+                <navigationController id="v2o-U5-che" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="消息" image="3消息（选中）" id="Gni-Iy-B6y"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KJC-pb-aqN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1LY-sC-I6U" kind="relationship" relationship="rootViewController" id="9DA-D3-cg4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30o-wr-mFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1084" y="1174"/>
+        </scene>
+        <!--消息-->
         <scene sceneID="qTk-xh-2YU">
             <objects>
                 <viewController id="1LY-sC-I6U" customClass="ThirdViewController" sceneMemberID="viewController">
@@ -303,24 +320,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Nzb-xB-stw">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ol5-2C-Se2">
                                 <rect key="frame" x="0.0" y="65" width="320" height="456"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="1LY-sC-I6U" id="NXp-X5-SQi"/>
-                                    <outlet property="delegate" destination="1LY-sC-I6U" id="q7D-LA-3eh"/>
-                                </connections>
-                            </tableView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1农园（未选中）" id="yRN-e8-zsP">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="消息" image="3消息（未选中）" id="0ow-Fi-FHa"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" id="AjB-El-bjZ">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mMN-nd-0aH">
+                            <rect key="frame" x="96" y="8" width="128" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myImageView" destination="yRN-e8-zsP" id="bRV-zd-m8S"/>
+                        <outlet property="myScrollView" destination="ol5-2C-Se2" id="vuj-nc-mYV"/>
+                        <outlet property="mySeg" destination="mMN-nd-0aH" id="bQp-4f-zJS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmn-BV-l4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-764" y="1177"/>
+            <point key="canvasLocation" x="-699" y="1174"/>
         </scene>
         <!--我的-->
         <scene sceneID="Rh8-hg-zis">
@@ -335,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ps6-pb-aAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268" y="1177"/>
+            <point key="canvasLocation" x="-242" y="1246"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cWg-6b-WRA">
@@ -361,6 +393,7 @@
         <image name="1农园（未选中）" width="30" height="30"/>
         <image name="2社区（未选中）" width="30" height="30"/>
         <image name="3消息（未选中）" width="30" height="30"/>
+        <image name="3消息（选中）" width="30" height="30"/>
         <image name="4菜篮（未选中）" width="30" height="30"/>
         <image name="bg+温湿度光照度new" width="640" height="306"/>
         <image name="news" width="1024" height="1024"/>

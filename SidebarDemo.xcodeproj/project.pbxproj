@@ -163,7 +163,6 @@
 				83F75B461AFF8BCC008A27A8 /* SecondViewController.h */,
 				83F75B471AFF8BCC008A27A8 /* SecondViewController.m */,
 				835A3B201B077D1700808DCB /* ThirdViewController.h */,
-				835A3B211B077D1700808DCB /* ThirdViewController.m */,
 				835A3B231B077D2600808DCB /* FourthViewController.h */,
 				835A3B241B077D2600808DCB /* FourthViewController.m */,
 			);
@@ -204,6 +203,7 @@
 				F4090B9E1A0F67D000651F6F /* Images.xcassets */,
 				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
 				F4090BC21A0FD62A00651F6F /* MainViewController.m */,
+				835A3B211B077D1700808DCB /* ThirdViewController.m */,
 				F4090B961A0F67D000651F6F /* AppDelegate.m */,
 				F4090B921A0F67D000651F6F /* Info.plist */,
 				83D856361B0E166000701B55 /* Constant.h */,

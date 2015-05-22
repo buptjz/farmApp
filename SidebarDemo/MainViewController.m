@@ -83,9 +83,9 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        self.title = FIRSTPAGETITLE;
+    
     navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    self.title = FIRSTPAGETITLE;
-
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
                                                        NSForegroundColorAttributeName, nil]];

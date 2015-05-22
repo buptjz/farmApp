@@ -7,32 +7,43 @@
 //
 
 #import "ThirdViewController.h"
+#import "Constant.h"
 
 @interface ThirdViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *myImageView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mySeg;
 
 @end
 
 @implementation ThirdViewController
 
-@synthesize list = _list;
+
+-(void)onSegValChanged:(UISegmentedControl *) sender{
+    NSInteger index = sender.selectedSegmentIndex;
+    switch (index) {
+        case 0:
+            NSLog(@"0 clicked.");
+            self.myImageView.image = [UIImage imageNamed:SEG1_IMAGE];
+            break;
+        case 1:
+            self.myImageView.image = [UIImage imageNamed:SEG2_IMAGE];
+            NSLog(@"1 clicked.");
+        break;
+    }
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    NSArray *array = [[NSArray alloc] initWithObjects:@"美国", @"菲律宾",
-                      @"黄岩岛", @"中国", @"泰国", @"越南", @"老挝",
-                      @"日本" , nil];
-    self.list = array;
+    navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
+                                                                     NSForegroundColorAttributeName, nil]];
+    self.myImageView.image = [UIImage imageNamed:@"2.png"];
+    self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT2);
+    [self.mySeg addTarget:self action:@selector(onSegValChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    self.list = nil;
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -40,33 +51,25 @@
 }
 
 
-#pragma mark - Table
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.list count];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *TableSampleIdentifier = @"TableSampleIdentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
-                             TableSampleIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:TableSampleIdentifier];
+- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+        return (UIImageView *)view;
     }
-    
-    NSUInteger row = [indexPath row];
-    cell.textLabel.text = [self.list objectAtIndex:row];
-    return cell;
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    navBarHairlineImageView.hidden = YES;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    navBarHairlineImageView.hidden = NO;
+}
 
 @end
