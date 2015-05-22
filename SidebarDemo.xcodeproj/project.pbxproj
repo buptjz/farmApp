@@ -206,6 +206,7 @@
 				F4090BC21A0FD62A00651F6F /* MainViewController.m */,
 				F4090B961A0F67D000651F6F /* AppDelegate.m */,
 				F4090B921A0F67D000651F6F /* Info.plist */,
+				83D856361B0E166000701B55 /* Constant.h */,
 				83F75B491AFF8C62008A27A8 /* Vs */,
 				834B25F01B07AFA000027B5C /* libs */,
 				F4090B911A0F67D000651F6F /* Supporting Files */,
@@ -218,7 +219,6 @@
 			children = (
 				83F1AF8B1B0F562600B65023 /* SWRevealViewController.h */,
 				83F1AF8C1B0F562600B65023 /* SWRevealViewController.m */,
-				83D856361B0E166000701B55 /* Constant.h */,
 				83F6E2851B088E9D00D823A6 /* DadaManager.h */,
 				83F6E2861B088E9D00D823A6 /* DadaManager.m */,
 				83F6E2831B088CF700D823A6 /* sensor_states.plist */,

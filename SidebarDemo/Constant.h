@@ -1,3 +1,5 @@
 
 
 #define FIRSTPAGETITLE @"乐颗市民农园"
+#define SCROLLHEIGHT 560
+#define ANIMATION_DURATION 2

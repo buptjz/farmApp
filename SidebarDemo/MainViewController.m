@@ -51,7 +51,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 -(void)nolackWaterTriggering{
     dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:3 animations:^(void){
+        [UIView animateWithDuration:ANIMATION_DURATION animations:^(void){
             self.lackWaterImage.alpha = 0.0;
         }completion:^(BOOL finished){
         }];
@@ -60,8 +60,8 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 -(void)lackWaterTriggering{
     dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:3 animations:^(void){
-            self.lackWaterImage.alpha = 0.5;
+        [UIView animateWithDuration:ANIMATION_DURATION animations:^(void){
+            self.lackWaterImage.alpha = 1.0;
         }completion:^(BOOL finished){
         }];
     });
@@ -99,8 +99,8 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     }
     self.sensors = [DadaManager LoadData];
     
-    self.myScrollView.contentSize = CGSizeMake(320, 498);
-    self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT);
+//    self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.myScrollView addPullToRefreshWithActionHandler:^{
         [self get_data];
     }];
@@ -113,7 +113,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 - (IBAction)shareButtonPressed:(id)sender {
     NSLog(@"shareButton pressed");
     NSString *texttoshare = @"分享"; //this is your text string to share
-    UIImage *imagetoshare = [UIImage imageNamed:@"1.png"]; //this is your image to share
+    UIImage *imagetoshare = [UIImage imageNamed:@"bg128.png"]; //this is your image to share
     NSArray *activityItems = @[texttoshare, imagetoshare];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
