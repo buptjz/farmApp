@@ -14,23 +14,22 @@
 #import "Constant.h"
 #import "SVPullToRefresh.h"
 #import "JGActionSheet.h"
+#import "MainViewController+Network.h"
 
 //"http://api.yeelink.net/v1.1/device/18975/sensor/33104/datapoints"
 static NSString *BaseURLString = @"http://api.yeelink.net/v1.0/device/18975";
-
 static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/sensor/33034/datapoints";
 //static NSString *rawdata = @"{\"timestamp\":\"2015-05-17T20:28:14\", \"value\":233 }";
 
 @interface MainViewController ()
 
-@property(nonatomic,retain) NSDictionary *sensors;
+
 @property (weak, nonatomic) IBOutlet UIButton *waterButton;
 @property (nonatomic) BOOL lackWater;
 @property (weak, nonatomic) IBOutlet UILabel *m1label;
 @property (weak, nonatomic) IBOutlet UILabel *m2label;
 @property (weak, nonatomic) IBOutlet UILabel *m3label;
 @property (weak, nonatomic) IBOutlet UILabel *top_label;
-
 
 @end
 
@@ -46,14 +45,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     }
 }
 
--(void)setSensors:(NSDictionary *)sensors{
-    //随着sendor的改变，调整视图
-    if ([[sensors valueForKey:@"value"] intValue] == 1) {
-        self.lackWater = true;
-    }else{
-        self.lackWater = false;
-    }
-}
 
 -(void)nolackWaterTriggering{
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -100,12 +91,15 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-    [DadaManager SavaData:self.sensors];
+    [DadaManager SavaData:self.dataModel];
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.dataModel = [DadaManager LoadData];
+    [self login:USERMAIL password:PWD];
     
     self.top_label.font = [UIFont fontWithName:FONT_CU size:18];
     self.m1label.font = [UIFont fontWithName:FONT_CU size:21];
@@ -126,7 +120,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    self.sensors = [DadaManager LoadData];
+
     
     self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT);
 //    self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -143,6 +137,10 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 }
 
 - (IBAction)shareButtonPressed:(id)sender {
+//    [self postControlEvents:@"Water" value:@"False"];
+    [self getControlEvents];
+    [self getDataEvents];
+    
     NSLog(@"shareButton pressed");
     NSString *texttoshare = @"分享"; //this is your text string to share
     UIImage *imagetoshare = [UIImage imageNamed:@"bg128.png"]; //this is your image to share
@@ -185,7 +183,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *data_dic = (NSDictionary *)responseObject;
         NSLog(@"%@",data_dic);
-        self.sensors = data_dic;
+//        self.dataModel = data_dic;
         [self.myScrollView.pullToRefreshView stopAnimating];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Json Get"

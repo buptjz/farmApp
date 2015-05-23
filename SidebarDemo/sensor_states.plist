@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>my_app_kit_id</key>
+	<string>7phKYtQeuf3vXwZmn</string>
+	<key>authToken</key>
+	<string>SEWRWAoXnHJSNlUADUSUEyeNSyqrOh6DhjvB3gxJxRy</string>
+	<key>userId</key>
+	<string>MKtXWJT9DHh9gzMbD</string>
 	<key>33034</key>
 	<dict>
 		<key>des</key>

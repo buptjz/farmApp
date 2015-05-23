@@ -25,12 +25,12 @@
         [fm copyItemAtPath:boundlePath toPath:filename error:nil];
     }
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:filename];
-    NSLog(@"%@", data);//直接打印数据
+    NSLog(@"[R DB]%@", data);//直接打印数据
     return data;
 }
 
 +(void) SavaData:(NSDictionary *)dic{
-    NSLog(@"Write to database");
+    NSLog(@"[W DB] %@",dic);
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *plistPath1 = [paths objectAtIndex:0];
     NSString *filename=[plistPath1 stringByAppendingPathComponent:@"sensor_states.plist"];

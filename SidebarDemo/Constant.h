@@ -12,3 +12,17 @@
 
 
 #define WATERCOMMAND_URL @""
+
+#define API                 @"http://mcotton-01.chinacloudapp.cn:80/api"
+#define LOGIN               @"http://mcotton-01.chinacloudapp.cn:80/api/login"
+#define APP_KITS            @"http://mcotton-01.chinacloudapp.cn:80/api/v1.0/appkits"
+#define MY_APP_KITS         @"http://mcotton-01.chinacloudapp.cn:80/api/v1.0/myappkits"
+#define DATA_EVENTS         @"http://mcotton-01.chinacloudapp.cn:80/api/v1.0/de"
+#define CONTROL_EVENTS      @"http://mcotton-01.chinacloudapp.cn:80/api/v1.0/ce"
+
+
+#define USERMAIL @"iasc@163.com"
+#define PWD @"123456"
+#define AUTH_TOKEN_FIELD @"authToken"
+#define USER_ID_FIELD @"userId"
+#define APP_ID_FIELD @"my_app_kit_id"
