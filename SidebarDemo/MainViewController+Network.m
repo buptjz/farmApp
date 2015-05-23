@@ -15,10 +15,7 @@
 
 @implementation MainViewController (Network)
 
--(void)updateTheUI{
-    //To Do : 检查是否缺水！
-    [self.myScrollView.pullToRefreshView stopAnimating];
-}
+
 
 -(void)getMyAppKits{
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:MY_APP_KITS]
@@ -85,6 +82,7 @@
 
         /*  解析数据  */
         NSDictionary *dic = (NSDictionary *)responseObject;
+        NSLog(@"[READ] DATA %@",dic);
         [dic enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSDictionary *obj, BOOL *stop) {
             NSDictionary *cgq = [self.dataModel objectForKey:key];
             [cgq setValue:[obj valueForKey:@"value"] forKey:@"value"];

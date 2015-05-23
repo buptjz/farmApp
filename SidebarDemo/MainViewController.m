@@ -30,10 +30,25 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 @property (weak, nonatomic) IBOutlet UILabel *m2label;
 @property (weak, nonatomic) IBOutlet UILabel *m3label;
 @property (weak, nonatomic) IBOutlet UILabel *top_label;
+@property (weak, nonatomic) IBOutlet UILabel *trsd1_label;
+@property (weak, nonatomic) IBOutlet UILabel *trsd2_label;
+@property (weak, nonatomic) IBOutlet UILabel *trsd3_label;
+@property (weak, nonatomic) IBOutlet UILabel *trsd4_label;
 
 @end
 
 @implementation MainViewController
+
+-(void)updateTheUI{
+    //To Do : 检查是否缺水！
+    [self.myScrollView.pullToRefreshView stopAnimating];
+    
+    self.trsd1_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H1] valueForKey:@"value"]];
+    self.trsd2_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H2] valueForKey:@"value"]];
+    self.trsd3_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H3] valueForKey:@"value"]];
+    self.trsd4_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H4] valueForKey:@"value"]];
+}
+
 
 -(void)setLackWater:(BOOL)lackWater{
     if (_lackWater == lackWater)
@@ -44,7 +59,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
         [self nolackWaterTriggering];
     }
 }
-
 
 -(void)nolackWaterTriggering{
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -148,39 +162,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypePrint];
     [self presentViewController:activityVC animated:TRUE completion:nil];
-}
-
--(void)send_data:(NSString *)urlString data:(NSString *) dataString{
-    NSURL *myURL = [NSURL URLWithString:myURLString];
-    NSLog(@"发送POST请求\n【url】=%@\n【raw_data】=%@",urlString,dataString);
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL
-                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData  timeoutInterval:10];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"f041c96ac09984620fb520ee9d439f9d" forHTTPHeaderField:@"U-ApiKey"];
-    [request setHTTPBody: [dataString dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //        NSLog(@"JSON responseObject: %@ ",responseObject);
-        NSLog(@"upload data success!");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", [error localizedDescription]);
-    }];
-    [op start];
-}
-
--(NSString *)assemblePostDataWithValue:(NSString *)value{
-    // 获取系统当前时间
-    NSDate * date = [NSDate date];
-    NSTimeInterval sec = [date timeIntervalSinceNow];
-    NSDate * currentDate = [[NSDate alloc] initWithTimeIntervalSinceNow:sec];
-    //设置时间输出格式：
-    NSDateFormatter * df = [[NSDateFormatter alloc] init ];
-    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];//:"2015-03-11 16:13:14"
-    NSString * na = [df stringFromDate:currentDate];
-    NSString *retString = [NSString stringWithFormat: @"{\"timestamp\":\"%@\", \"value\":%@}",na,value];
-    NSLog(@"%@",retString);
-    return retString;
 }
 
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view {

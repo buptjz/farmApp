@@ -161,6 +161,10 @@
                         <outlet property="myScrollView" destination="Mbh-eU-u4C" id="OhL-6c-mtj"/>
                         <outlet property="sidebarButton" destination="DJB-Dc-VO5" id="S0X-A3-1V6"/>
                         <outlet property="top_label" destination="QVr-VW-w5j" id="gfR-52-ysG"/>
+                        <outlet property="trsd1_label" destination="phz-ir-qG0" id="R59-NK-QSg"/>
+                        <outlet property="trsd2_label" destination="FIC-qH-7H1" id="1TO-1f-pxB"/>
+                        <outlet property="trsd3_label" destination="dJT-kJ-pWi" id="c8X-qC-yC9"/>
+                        <outlet property="trsd4_label" destination="DdE-xh-sZa" id="uiq-fP-o90"/>
                         <outlet property="waterButton" destination="a4L-k0-JRe" id="EOU-OH-Rdf"/>
                     </connections>
                 </viewController>

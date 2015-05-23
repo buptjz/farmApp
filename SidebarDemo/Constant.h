@@ -35,6 +35,11 @@
 #define L2 @"Light P2"
 #define T2 @"Temperature P2"
 
-#define H3 @"Humidity P2"
-#define L3 @"Light P2"
-#define T3 @"Temperature P2"
+#define H3 @"Humidity P3"
+#define L3 @"Light P3"
+#define T3 @"Temperature P3"
+
+
+#define H4 @"Humidity P4"
+#define L4 @"Light P4"
+#define T4 @"Temperature P4"
