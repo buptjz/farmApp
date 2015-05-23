@@ -23,6 +23,9 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 @interface MainViewController ()
 
+@property (strong,nonatomic) UIButton *okButton;
+@property (strong,nonatomic) JGActionSheet *sheet;
+@property (strong,nonatomic) UIImageView *animation_image_view;
 
 @property (weak, nonatomic) IBOutlet UIButton *waterButton;
 @property (nonatomic) BOOL lackWater;
@@ -42,11 +45,17 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 -(void)updateTheUI{
     //To Do : 检查是否缺水！
     [self.myScrollView.pullToRefreshView stopAnimating];
-    
     self.trsd1_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H1] valueForKey:@"value"]];
     self.trsd2_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H2] valueForKey:@"value"]];
     self.trsd3_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H3] valueForKey:@"value"]];
     self.trsd4_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H4] valueForKey:@"value"]];
+    
+    NSString *h1Value = [(NSDictionary *)[self.dataModel valueForKey:H1] valueForKey:@"value"];
+    if (h1Value.intValue == 23) {
+        self.lackWater = true;
+    }else{
+        self.lackWater = false;
+    }
 }
 
 
@@ -80,28 +89,55 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     });
 }
 
+-(void)dismissSheet{
+    [self.sheet dismissAnimated:YES];
+}
+
+-(void)sheetOkButtonPressed{
+    NSLog(@"Pressed sheet ok!");
+    [self.sheet setUserInteractionEnabled:NO];
+    [self.okButton setUserInteractionEnabled:NO];
+    NSArray *myImages = [NSArray arrayWithObjects:
+                         [UIImage imageNamed:@"田1.png"],
+                         [UIImage imageNamed:@"田2.png"],
+                         [UIImage imageNamed:@"田3.png"],
+                         [UIImage imageNamed:@"田4.png"],nil];
+        
+    self.animation_image_view.animationImages = myImages;//将序列帧数组赋给UIImageView的animationImages属性
+    self.animation_image_view.animationDuration = 0.25;//设置动画时间
+    self.animation_image_view.animationRepeatCount = 1;//设置动画次数 0 表示无限
+    [self.animation_image_view startAnimating];//开始播放动画
+    [self performSelector:@selector(dismissSheet) withObject:nil afterDelay:1];
+}
+
+-(void)initSheetView{
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 290, 320)];
+    UIImage *img = [UIImage imageNamed:@"幼苗期new.png"];
+    self.animation_image_view = [[UIImageView alloc]initWithImage:img];
+    [bgView addSubview:self.animation_image_view ];
+    UIButton *okButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    okButton.frame = CGRectMake(0, 270, 290, 50);
+    [okButton setImage:[UIImage imageNamed:@"bg128.png"] forState:UIControlStateNormal];
+    [okButton addTarget:self action:@selector(sheetOkButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:okButton];
+    
+    JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"确定", @"取消",@"填充"] buttonStyle:
+                                      JGActionSheetButtonStyleDefault];
+    
+    JGActionSheetSection *cus_sec = [[JGActionSheetSection alloc]initWithTitle:nil message:nil contentView:bgView];
+    
+    NSArray *sections = @[cus_sec,section1];
+    
+    self.sheet = [JGActionSheet actionSheetWithSections:sections];
+    section1.alpha = 0;
+    [self.sheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
+    }];
+}
+
 -(IBAction)waterButtonPressed:(id)sender {
-    //http://www.jianshu.com/p/bf3325111fe5
-    WaterViewController * testVC = [[WaterViewController alloc]init];
-    self.definesPresentationContext = YES; //self is presenting view controller
-    testVC.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
-    testVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    [self presentViewController:testVC animated:YES completion:nil];
-    
-//    UIActionSheet *sheet = [[UIActionSheet alloc] init];
-//    WaterViewController *testVC = [[WaterViewController alloc]initWithNibName:@"WaterViewController" bundle:[NSBundle mainBundle]];
-//    [sheet addSubview:testVC.view];
-//    [sheet showInView:self.view];
-    
-//    WaterViewController *vc = [[WaterViewController alloc] init];
-//    
-//    vc.view.frame = CGRectMake(0,0,320,300); //Your own CGRect
-//    [self.view addSubview:vc.view]; //If you don't want to show inside a specific view
-//    [self addChildViewController:vc];
-//    [self didMoveToParentViewController:vc];
-    //for someone, may need to do this.
-    //[self.navigationController addChildViewController:vc];
-    //[self.navigationController didMoveToParentViewController:vc];
+    [self initSheetView];
+    UIView *topView = [[[UIApplication sharedApplication] delegate] window];
+    [self.sheet showInView:topView animated:YES];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -111,7 +147,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.dataModel = [DadaManager LoadData];
     [self login:USERMAIL password:PWD];
     
@@ -142,8 +177,8 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
         [self getDataEvents];
     }];
     
-    self.waterButton.enabled = NO;
-    self.waterButton.alpha = 0.0;
+//    self.waterButton.enabled = NO;
+//    self.waterButton.alpha = 0.0;
 }
 
 - (void)didReceiveMemoryWarning {

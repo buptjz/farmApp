@@ -2,10 +2,13 @@
 
 #define FIRSTPAGETITLE @"乐颗市民农园"
 #define SCROLLHEIGHT 560
-#define SCROLLHEIGHT2 560
+#define SCROLLHEIGHT2 450
+
+
 #define ANIMATION_DURATION 2
-#define SEG1_IMAGE @"2.png"
-#define SEG2_IMAGE @"3.png"
+#define SEG1_IMAGE @"tab2-活动1new.png"
+#define SEG2_IMAGE @"tab2-交流1new.png"
+
 
 #define FONT_XI @"FZXiDengXian-Z06S"
 #define FONT_CU @"FZZhongDengXian-Z07S"

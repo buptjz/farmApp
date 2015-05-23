@@ -36,7 +36,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Mbh-eU-u4C">
-                                <rect key="frame" x="0.0" y="216" width="321" height="429"/>
+                                <rect key="frame" x="0.0" y="216" width="320" height="429"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田1" id="des-3S-5fj" userLabel="p1">
@@ -54,7 +54,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="开花期new" id="0kn-pr-wLT" userLabel="bg1">
-                                        <rect key="frame" x="10" y="10" width="146" height="200"/>
+                                        <rect key="frame" x="10" y="10" width="145" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田2" id="L5b-13-wog" userLabel="p2">
@@ -62,7 +62,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="幼苗期new" id="Z3Y-ay-e08" userLabel="bg2">
-                                        <rect key="frame" x="165" y="10" width="146" height="200"/>
+                                        <rect key="frame" x="165" y="10" width="145" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田3" id="VJE-P3-Kal" userLabel="p3">
@@ -70,7 +70,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="结果期new" id="TUn-vX-zxl" userLabel="bg3">
-                                        <rect key="frame" x="10" y="218" width="146" height="200"/>
+                                        <rect key="frame" x="10" y="218" width="145" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田4" id="vxu-M5-Cwy" userLabel="p3">
@@ -78,7 +78,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="生长期new" id="Vzv-l6-GFN" userLabel="bg4">
-                                        <rect key="frame" x="165" y="218" width="146" height="200"/>
+                                        <rect key="frame" x="165" y="218" width="145" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phz-ir-qG0" userLabel="湿度1">
@@ -315,11 +315,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ol5-2C-Se2">
-                                <rect key="frame" x="0.0" y="65" width="320" height="456"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="515"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1农园（未选中）" id="yRN-e8-zsP">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab2-交流1new" id="yRN-e8-zsP">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="515"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -337,7 +337,13 @@
                                 <segment title="活动"/>
                             </segments>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" image="tab2-建立对话" id="KiG-Io-3cx">
+                            <connections>
+                                <action selector="messageButtonPressed:" destination="1LY-sC-I6U" id="PqA-C2-Gse"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myImageView" destination="yRN-e8-zsP" id="bRV-zd-m8S"/>
                         <outlet property="myScrollView" destination="ol5-2C-Se2" id="vuj-nc-mYV"/>
@@ -388,8 +394,10 @@
         <image name="3消息（未选中）" width="30" height="30"/>
         <image name="3消息（选中）" width="30" height="30"/>
         <image name="4菜篮（未选中）" width="30" height="30"/>
-        <image name="bg+温湿度光照度new" width="640" height="306"/>
+        <image name="bg+温湿度光照度new" width="320" height="153"/>
         <image name="news" width="1024" height="1024"/>
+        <image name="tab2-交流1new" width="320" height="515"/>
+        <image name="tab2-建立对话" width="22" height="22"/>
         <image name="waterdrop" width="145" height="145"/>
         <image name="幼苗期new" width="146" height="199"/>
         <image name="开花期new" width="146" height="199"/>
