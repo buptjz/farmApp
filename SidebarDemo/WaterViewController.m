@@ -7,6 +7,8 @@
 //
 
 #import "WaterViewController.h"
+#import "AFNetworking.h"
+#import "Constant.h"
 
 @interface WaterViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *AnimationView;
@@ -14,6 +16,29 @@
 @end
 
 @implementation WaterViewController
+
+
+-(void)sendWaterCommand:(NSString *)dataString{
+    NSURL *myURL = [NSURL URLWithString:WATERCOMMAND_URL];
+    NSLog(@"发送浇水 指令 =%@",WATERCOMMAND_URL);
+    
+    //设置请求的格式
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL
+                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData  timeoutInterval:10];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"f041c96ac09984620fb520ee9d439f9d" forHTTPHeaderField:@"U-ApiKey"];
+    [request setHTTPBody: [dataString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    //发送请求
+    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"upload data success!");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", [error localizedDescription]);
+    }];
+    [op start];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +62,7 @@
     self.AnimationView.animationDuration = 0.25;//设置动画时间
     self.AnimationView.animationRepeatCount = 1;//设置动画次数 0 表示无限
     [self.AnimationView startAnimating];//开始播放动画
+    
     [self performSelector:@selector(dismissGo) withObject:NULL afterDelay:1];
 }
 
@@ -44,9 +70,10 @@
     [self dismissViewControllerAnimated:true completion:NULL];
 }
 - (IBAction)okPressed:(id)sender {
+    [self sendWaterCommand:@""];
     [self sequenceAnimation];
-
 }
+
 
 /*
 #pragma mark - Navigation

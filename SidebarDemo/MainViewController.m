@@ -169,7 +169,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
         NSLog(@"Error: %@", [error localizedDescription]);
     }];
     [op start];
-    
 }
 
 

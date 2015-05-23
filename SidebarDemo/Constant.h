@@ -9,3 +9,6 @@
 
 #define FONT_XI @"FZXiDengXian-Z06S"
 #define FONT_CU @"FZZhongDengXian-Z07S"
+
+
+#define WATERCOMMAND_URL @""
