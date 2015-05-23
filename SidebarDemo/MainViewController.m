@@ -125,7 +125,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT);
 //    self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.myScrollView addPullToRefreshWithActionHandler:^{
-        [self get_data];
+        [self getDataEvents];
     }];
     
     self.waterButton.enabled = NO;
@@ -167,33 +167,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
         NSLog(@"Error: %@", [error localizedDescription]);
     }];
     [op start];
-}
-
-
--(void)get_data{
-    //http://stackoverflow.com/questions/19114623/request-failed-unacceptable-content-type-text-html-using-afnetworking-2-0
-    NSString *sensor_id = @"33104";
-    NSString *string = [NSString stringWithFormat:@"%@/sensor/%@/datapoints", BaseURLString,sensor_id];
-    NSURL *url = [NSURL URLWithString:string];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    NSLog(@"发起json请求 == %@",url);
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *data_dic = (NSDictionary *)responseObject;
-        NSLog(@"%@",data_dic);
-//        self.dataModel = data_dic;
-        [self.myScrollView.pullToRefreshView stopAnimating];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Json Get"
-                                                            message:[error localizedDescription]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }];
-    [operation start];
 }
 
 -(NSString *)assemblePostDataWithValue:(NSString *)value{

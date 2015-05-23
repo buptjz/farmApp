@@ -26,3 +26,15 @@
 #define AUTH_TOKEN_FIELD @"authToken"
 #define USER_ID_FIELD @"userId"
 #define APP_ID_FIELD @"my_app_kit_id"
+
+#define H1 @"Humidity P1"
+#define L1 @"Light P1"
+#define T1 @"Temperature P1"
+
+#define H2 @"Humidity P2"
+#define L2 @"Light P2"
+#define T2 @"Temperature P2"
+
+#define H3 @"Humidity P2"
+#define L3 @"Light P2"
+#define T3 @"Temperature P2"

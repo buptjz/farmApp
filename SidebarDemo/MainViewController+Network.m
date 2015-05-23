@@ -11,8 +11,14 @@
 #import "AppDelegate.h"
 #import "AFNetworking.h"
 #import "BVJSONString.h"
+#import "SVPullToRefresh.h"
 
 @implementation MainViewController (Network)
+
+-(void)updateTheUI{
+    //To Do : 检查是否缺水！
+    [self.myScrollView.pullToRefreshView stopAnimating];
+}
 
 -(void)getMyAppKits{
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:MY_APP_KITS]
@@ -65,7 +71,6 @@
 }
 
 -(void)getDataEvents{
-    
     NSString *url = [NSString stringWithFormat:@"%@/%@",DATA_EVENTS,[self.dataModel valueForKey:APP_ID_FIELD]];
     NSLog(@"[GET] = %@",url);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
@@ -77,8 +82,16 @@
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     op.responseSerializer = [AFJSONResponseSerializer serializer];
     [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        /*  解析数据  */
         NSDictionary *dic = (NSDictionary *)responseObject;
-        NSLog(@"[READ] DATA %@",dic);
+        [dic enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSDictionary *obj, BOOL *stop) {
+            NSDictionary *cgq = [self.dataModel objectForKey:key];
+            [cgq setValue:[obj valueForKey:@"value"] forKey:@"value"];
+            [cgq setValue:[obj valueForKey:@"submit_time"] forKey:@"submit_time"];
+        }];
+        
+        [self performSelector:@selector(updateTheUI) withObject:nil afterDelay:0.5f];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", [error localizedDescription]);
