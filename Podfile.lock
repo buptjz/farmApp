@@ -20,14 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - JGActionSheet (1.0.4)
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - JGActionSheet
   - SVPullToRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  JGActionSheet: 7c6a947dca93a5c6031032ab76e157b19087d593
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
 COCOAPODS: 0.37.1

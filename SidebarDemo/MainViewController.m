@@ -13,6 +13,7 @@
 #import "DadaManager.h"
 #import "Constant.h"
 #import "SVPullToRefresh.h"
+#import "JGActionSheet.h"
 
 //"http://api.yeelink.net/v1.1/device/18975/sensor/33104/datapoints"
 static NSString *BaseURLString = @"http://api.yeelink.net/v1.0/device/18975";
@@ -23,12 +24,13 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 @interface MainViewController ()
 
 @property(nonatomic,retain) NSDictionary *sensors;
-@property (weak, nonatomic) IBOutlet UIImageView *lackWaterImage;
+@property (weak, nonatomic) IBOutlet UIButton *waterButton;
 @property (nonatomic) BOOL lackWater;
 @property (weak, nonatomic) IBOutlet UILabel *m1label;
 @property (weak, nonatomic) IBOutlet UILabel *m2label;
 @property (weak, nonatomic) IBOutlet UILabel *m3label;
 @property (weak, nonatomic) IBOutlet UILabel *top_label;
+
 
 @end
 
@@ -56,7 +58,8 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 -(void)nolackWaterTriggering{
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:ANIMATION_DURATION animations:^(void){
-            self.lackWaterImage.alpha = 0.0;
+            self.waterButton.alpha = 0.0;
+            self.waterButton.enabled = NO;
         }completion:^(BOOL finished){
         }];
     });
@@ -65,7 +68,8 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 -(void)lackWaterTriggering{
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:ANIMATION_DURATION animations:^(void){
-            self.lackWaterImage.alpha = 1.0;
+            self.waterButton.alpha = 1.0;
+            self.waterButton.enabled = YES;
         }completion:^(BOOL finished){
         }];
     });
@@ -78,6 +82,21 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     testVC.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.6];
     testVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:testVC animated:YES completion:nil];
+    
+//    UIActionSheet *sheet = [[UIActionSheet alloc] init];
+//    WaterViewController *testVC = [[WaterViewController alloc]initWithNibName:@"WaterViewController" bundle:[NSBundle mainBundle]];
+//    [sheet addSubview:testVC.view];
+//    [sheet showInView:self.view];
+    
+//    WaterViewController *vc = [[WaterViewController alloc] init];
+//    
+//    vc.view.frame = CGRectMake(0,0,320,300); //Your own CGRect
+//    [self.view addSubview:vc.view]; //If you don't want to show inside a specific view
+//    [self addChildViewController:vc];
+//    [self didMoveToParentViewController:vc];
+    //for someone, may need to do this.
+    //[self.navigationController addChildViewController:vc];
+    //[self.navigationController didMoveToParentViewController:vc];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -114,6 +133,9 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     [self.myScrollView addPullToRefreshWithActionHandler:^{
         [self get_data];
     }];
+    
+    self.waterButton.enabled = NO;
+    self.waterButton.alpha = 0.0;
 }
 
 - (void)didReceiveMemoryWarning {

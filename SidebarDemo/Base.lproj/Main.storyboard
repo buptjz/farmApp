@@ -43,10 +43,16 @@
                                         <rect key="frame" x="10" y="10" width="146" height="146"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterdrop" id="RiM-dP-HoP" userLabel="water">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a4L-k0-JRe" userLabel="water">
                                         <rect key="frame" x="10" y="10" width="146" height="146"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                        <state key="normal" image="waterdrop">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="waterButtonPressed:" destination="Z2I-Sz-A3d" eventType="touchUpInside" id="ERq-IR-Trc"/>
+                                        </connections>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="开花期new" id="0kn-pr-wLT" userLabel="bg1">
                                         <rect key="frame" x="10" y="10" width="146" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +85,7 @@
                                         <rect key="frame" x="32" y="165" width="41" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="62%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FIC-qH-7H1" userLabel="湿度2">
@@ -149,13 +155,13 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="lackWaterImage" destination="RiM-dP-HoP" id="vyC-ED-teT"/>
                         <outlet property="m1label" destination="ieN-b7-l2R" id="W1v-I1-7is"/>
                         <outlet property="m2label" destination="kqX-IB-kj5" id="r0L-vs-OP3"/>
                         <outlet property="m3label" destination="9DL-1t-hFn" id="9rL-xH-Vqa"/>
                         <outlet property="myScrollView" destination="Mbh-eU-u4C" id="OhL-6c-mtj"/>
                         <outlet property="sidebarButton" destination="DJB-Dc-VO5" id="S0X-A3-1V6"/>
                         <outlet property="top_label" destination="QVr-VW-w5j" id="gfR-52-ysG"/>
+                        <outlet property="waterButton" destination="a4L-k0-JRe" id="EOU-OH-Rdf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWP-sa-Vux" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,26 +187,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nz0-Nb-Lfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="819" y="518"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="RAA-LJ-Oq8">
-            <objects>
-                <viewController id="oB8-qv-Ozh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bmF-Gz-Thn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" id="YsG-57-RKN">
-                                <rect key="frame" x="37" y="137" width="247" height="293"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RSC-qS-poW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1151" y="-117"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="EDl-71-Ti2">
@@ -371,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ps6-pb-aAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-242" y="1246"/>
+            <point key="canvasLocation" x="-155" y="1174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cWg-6b-WRA">
@@ -393,7 +379,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="194" height="230"/>
         <image name="1农园（未选中）" width="30" height="30"/>
         <image name="2社区（未选中）" width="30" height="30"/>
         <image name="3消息（未选中）" width="30" height="30"/>
