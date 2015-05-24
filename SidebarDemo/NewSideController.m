@@ -11,11 +11,13 @@
 #import "AppDelegate.h"
 #import "Helper.h"
 #import "Constant.h"
+#import "SWRevealViewController.h"
 
 @interface NewSideController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *waterImageView;
 @property (nonatomic) BOOL lackWater;
+@property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 
 @end
 
@@ -61,6 +63,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.lackWater = false;
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    
+    if ( revealViewController )
+    {
+        [self.toggleButton addTarget:revealViewController action:@selector(revealToggle:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
     // Do any additional setup after loading the view.
 }
 
@@ -68,6 +78,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 
 /*
 #pragma mark - Navigation
