@@ -43,6 +43,8 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 @property (strong, nonatomic) NSMutableArray *ani_images;
 
+
+
 @end
 
 @implementation MainViewController
@@ -181,7 +183,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     self.waterButton.alpha = 0.0;
     
     //设定定时器
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(getDataEvents) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERNAL target:self selector:@selector(updateAll) userInfo:nil repeats:YES];
     
     //初始化animation image
     self.ani_images = [[NSMutableArray alloc]init];

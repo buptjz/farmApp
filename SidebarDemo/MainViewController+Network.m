@@ -12,8 +12,22 @@
 #import "AFNetworking.h"
 #import "BVJSONString.h"
 #import "SVPullToRefresh.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation MainViewController (Network)
+
+-(void)updateAll{
+    [self updateImage];
+    [self getDataEvents];
+}
+
+-(void)updateImage{
+    [self.photo1_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL1]];
+    [self.photo2_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL2]];
+    [self.photo3_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL3]];
+    [self.photo4_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL4]];
+}
+
 
 -(void)getMyAppKits{
     AppDelegate *appDelegate= [[UIApplication sharedApplication] delegate];

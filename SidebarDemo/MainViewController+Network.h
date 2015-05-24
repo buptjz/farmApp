@@ -15,4 +15,6 @@
 -(void)getDataEvents;
 -(void)login:(NSString *)usermail password:(NSString *)pwd;
 -(void)getMyAppKits;
+-(void)updateImage;
+-(void)updateAll;
 @end

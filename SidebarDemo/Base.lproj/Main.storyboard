@@ -189,6 +189,10 @@
                         <outlet property="m2label" destination="kqX-IB-kj5" id="r0L-vs-OP3"/>
                         <outlet property="m3label" destination="9DL-1t-hFn" id="9rL-xH-Vqa"/>
                         <outlet property="myScrollView" destination="Mbh-eU-u4C" id="OhL-6c-mtj"/>
+                        <outlet property="photo1_img_view" destination="des-3S-5fj" id="zHL-go-hv3"/>
+                        <outlet property="photo2_img_view" destination="L5b-13-wog" id="P7f-BH-IZw"/>
+                        <outlet property="photo3_img_view" destination="VJE-P3-Kal" id="DZB-6Y-8Wz"/>
+                        <outlet property="photo4_img_view" destination="vxu-M5-Cwy" id="bob-wF-SfE"/>
                         <outlet property="sidebarButton" destination="DJB-Dc-VO5" id="S0X-A3-1V6"/>
                         <outlet property="top_label" destination="QVr-VW-w5j" id="gfR-52-ysG"/>
                         <outlet property="trsd1_label" destination="phz-ir-qG0" id="R59-NK-QSg"/>
