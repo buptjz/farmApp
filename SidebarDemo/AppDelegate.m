@@ -25,8 +25,8 @@
     
     //unselected icon tint color
 //    [[UIView appearanceWhenContainedIn:[UITabBar class], nil] setTintColor:[UIColor redColor]];
-    
     //selected tint color
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     UIColor *tintColor = [UIColor colorWithRed:157/255.0 green:185/255.0 blue:53/255.0 alpha:1];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance]setBackgroundColor:tintColor];

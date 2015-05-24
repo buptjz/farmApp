@@ -133,6 +133,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 }
 
 -(IBAction)waterButtonPressed:(id)sender {
+    [self postControlEvents:@"Water" value:@"True"];
     [self initSheetView];
     UIView *topView = [[[UIApplication sharedApplication] delegate] window];
     [self.sheet showInView:topView animated:YES];
@@ -160,11 +161,17 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
                                                        NSForegroundColorAttributeName, nil]];
     
     SWRevealViewController *revealViewController = self.revealViewController;
+    
     if ( revealViewController )
     {
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//        [revealViewController.navigationController.navigationBar setBackgroundImage:
+//         [UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
+//        [revealViewController.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
+//                                                                         NSForegroundColorAttributeName, nil]];
+        
     }
     self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT);
     [self.myScrollView addPullToRefreshWithActionHandler:^{
@@ -183,10 +190,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 }
 
 - (IBAction)shareButtonPressed:(id)sender {
-//    [self postControlEvents:@"Water" value:@"False"];
-    [self getControlEvents];
-    [self getDataEvents];
-    
     NSLog(@"shareButton pressed");
     NSString *texttoshare = @"分享"; //this is your text string to share
     UIImage *imagetoshare = [UIImage imageNamed:@"bg128.png"]; //this is your image to share

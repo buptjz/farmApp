@@ -736,10 +736,19 @@ const int FrontViewPositionNone = 0xff;
     [self _setFrontViewPosition:initialPosition withDuration:0.0];
 }
 
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self setNeedsStatusBarAppearanceUpdate];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
+                                                                     NSForegroundColorAttributeName, nil]];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
+                                                                     NSForegroundColorAttributeName, nil]];
 
     // Uncomment the following code if you want the child controllers
     // to be loaded at this point.

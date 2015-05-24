@@ -21,7 +21,7 @@
 //    return false;
     
     NSString *h1Value = [(NSDictionary *)[dic valueForKey:H1] valueForKey:@"value"];
-    if (h1Value.intValue == 22) {
+    if (h1Value.intValue == 0) {
         NSLog(@"缺！");
         return true;
     }else{
