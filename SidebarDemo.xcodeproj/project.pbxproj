@@ -27,6 +27,7 @@
 		835A3B251B077D2600808DCB /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835A3B241B077D2600808DCB /* FourthViewController.m */; };
 		8370BF801B119B8B00ADE26E /* NewSideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8370BF7F1B119B8B00ADE26E /* NewSideController.m */; };
 		8370BF831B119F5500ADE26E /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8370BF821B119F5500ADE26E /* Helper.m */; };
+		837313CC1B11EEAC00651B87 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837313CB1B11EEAC00651B87 /* DetailViewController.m */; };
 		839ECC641B0F8431001E1483 /* FZXDXJW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 839ECC621B0F8431001E1483 /* FZXDXJW.TTF */; };
 		839ECC651B0F8431001E1483 /* FZZDXJW.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 839ECC631B0F8431001E1483 /* FZZDXJW.TTF */; };
 		83F1AF8D1B0F562600B65023 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F1AF8C1B0F562600B65023 /* SWRevealViewController.m */; };
@@ -84,6 +85,8 @@
 		8370BF7F1B119B8B00ADE26E /* NewSideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewSideController.m; sourceTree = "<group>"; };
 		8370BF811B119F5500ADE26E /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		8370BF821B119F5500ADE26E /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		837313CA1B11EEAC00651B87 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		837313CB1B11EEAC00651B87 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		839ECC621B0F8431001E1483 /* FZXDXJW.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZXDXJW.TTF; sourceTree = "<group>"; };
 		839ECC631B0F8431001E1483 /* FZZDXJW.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZZDXJW.TTF; sourceTree = "<group>"; };
 		83D856361B0E166000701B55 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 			children = (
 				8370BF811B119F5500ADE26E /* Helper.h */,
 				8370BF821B119F5500ADE26E /* Helper.m */,
+				837313CA1B11EEAC00651B87 /* DetailViewController.h */,
+				837313CB1B11EEAC00651B87 /* DetailViewController.m */,
 				F4090B961A0F67D000651F6F /* AppDelegate.m */,
 				8370BF7E1B119B8B00ADE26E /* NewSideController.h */,
 				8370BF7F1B119B8B00ADE26E /* NewSideController.m */,
@@ -424,6 +429,7 @@
 			files = (
 				F4090B9A1A0F67D000651F6F /* ViewController.m in Sources */,
 				F4090BC31A0FD62A00651F6F /* MainViewController.m in Sources */,
+				837313CC1B11EEAC00651B87 /* DetailViewController.m in Sources */,
 				8349DE221B10345700640550 /* MainViewController+Network.m in Sources */,
 				8370BF831B119F5500ADE26E /* Helper.m in Sources */,
 				835A3B221B077D1700808DCB /* ThirdViewController.m in Sources */,

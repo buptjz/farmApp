@@ -72,7 +72,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Nd6-1t-kGt" kind="push" id="WfR-9p-9jT"/>
+                                            <segue destination="Nd6-1t-kGt" kind="push" identifier="d2segue" id="WfR-9p-9jT"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田3" id="VJE-P3-Kal" userLabel="p3">
@@ -90,7 +90,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Nd6-1t-kGt" kind="push" id="QGZ-cL-uKs"/>
+                                            <segue destination="Nd6-1t-kGt" kind="push" identifier="d3segue" id="QGZ-cL-uKs"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田4" id="vxu-M5-Cwy" userLabel="p4">
@@ -108,7 +108,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Nd6-1t-kGt" kind="push" id="Egt-dc-qRf"/>
+                                            <segue destination="Nd6-1t-kGt" kind="push" identifier="d4segue" id="Egt-dc-qRf"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phz-ir-qG0" userLabel="湿度1">
@@ -206,26 +206,37 @@
             </objects>
             <point key="canvasLocation" x="-1346" y="1669"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="dFZ-Zg-MMb">
             <objects>
-                <viewController id="Nd6-1t-kGt" sceneMemberID="viewController">
+                <viewController id="Nd6-1t-kGt" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="49j-0q-45b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterdrop副本_00000" id="aPB-tt-oOS">
-                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="160"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gDj-Ao-uxq">
+                                <rect key="frame" x="79" y="310" width="163" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="F0X-YN-6ZN"/>
+                    <connections>
+                        <outlet property="image_view" destination="aPB-tt-oOS" id="WCO-ra-nlL"/>
+                        <outlet property="label1" destination="gDj-Ao-uxq" id="zDM-KY-sD5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzt-yv-xY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1755" y="1610"/>
+            <point key="canvasLocation" x="-1346" y="2371"/>
         </scene>
         <!--New Side Controller-->
         <scene sceneID="GEX-Da-8sp">

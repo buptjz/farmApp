@@ -1,5 +1,9 @@
 
 
+#define TYPE2 @"苹果"
+#define TYPE3 @"香蕉"
+#define TYPE4 @"鸭梨"
+
 #define UPDATE_INTERNAL 6
 
 #define IMAGE_URL1 @"http://img13.360buyimg.com/n1/s130x130_g14/M05/07/00/rBEhVVHvTPQIAAAAAADjAIrGq0YAABXuQM74EAAAOMY696.jpg"
