@@ -15,6 +15,8 @@
 #import "SVPullToRefresh.h"
 #import "JGActionSheet.h"
 #import "MainViewController+Network.h"
+#import "AppDelegate.h"
+#import "Helper.h"
 
 //"http://api.yeelink.net/v1.1/device/18975/sensor/33104/datapoints"
 static NSString *BaseURLString = @"http://api.yeelink.net/v1.0/device/18975";
@@ -46,23 +48,20 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 -(void)updateTheUI{
     //To Do : 检查是否缺水！
     [self.myScrollView.pullToRefreshView stopAnimating];
-    self.trsd1_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H1] valueForKey:@"value"]];
-    self.trsd2_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H2] valueForKey:@"value"]];
-    self.trsd3_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H3] valueForKey:@"value"]];
-    self.trsd4_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[self.dataModel valueForKey:H4] valueForKey:@"value"]];
-    
-    NSString *h1Value = [(NSDictionary *)[self.dataModel valueForKey:H1] valueForKey:@"value"];
-    if (h1Value.intValue == 23) {
-        self.lackWater = true;
-    }else{
-        self.lackWater = false;
-    }
+    AppDelegate *appDelegate= [[UIApplication sharedApplication] delegate];
+    NSDictionary *dataModel = appDelegate.dataModel;
+    self.trsd1_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[dataModel valueForKey:H1] valueForKey:@"value"]];
+    self.trsd2_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[dataModel valueForKey:H2] valueForKey:@"value"]];
+    self.trsd3_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[dataModel valueForKey:H3] valueForKey:@"value"]];
+    self.trsd4_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[dataModel valueForKey:H4] valueForKey:@"value"]];
+    self.lackWater = [Helper judgeLackWater:dataModel];
 }
 
 
 -(void)setLackWater:(BOOL)lackWater{
     if (_lackWater == lackWater)
         return;
+    _lackWater = lackWater;
     if (lackWater == true) {
         [self lackWaterTriggering];
     }else{
@@ -139,14 +138,13 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     [self.sheet showInView:topView animated:YES];
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    [DadaManager SavaData:self.dataModel];
-}
-
+//-(void)viewDidDisappear:(BOOL)animated{
+//    [DadaManager SavaData:self.dataModel];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataModel = [DadaManager LoadData];
+//    self.dataModel = [DadaManager LoadData];
     [self login:USERMAIL password:PWD];
     
     self.top_label.font = [UIFont fontWithName:FONT_CU size:18];

@@ -10,6 +10,7 @@
 #import "Constant.h"
 #import "BVJSONString.h"
 #import "AFNetworking.h"
+#import "DadaManager.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    self.dataModel = [DadaManager LoadData];
+    
     //unselected icon tint color
 //    [[UIView appearanceWhenContainedIn:[UITabBar class], nil] setTintColor:[UIColor redColor]];
     
