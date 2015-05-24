@@ -43,8 +43,12 @@
                                         <rect key="frame" x="10" y="10" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="开花期new" id="0kn-pr-wLT" userLabel="bg1">
+                                        <rect key="frame" x="10" y="10" width="145" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a4L-k0-JRe" userLabel="water">
-                                        <rect key="frame" x="10" y="10" width="146" height="146"/>
+                                        <rect key="frame" x="10" y="10" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="waterdrop">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,10 +57,6 @@
                                             <action selector="waterButtonPressed:" destination="Z2I-Sz-A3d" eventType="touchUpInside" id="ERq-IR-Trc"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="开花期new" id="0kn-pr-wLT" userLabel="bg1">
-                                        <rect key="frame" x="10" y="10" width="145" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田2" id="L5b-13-wog" userLabel="p2">
                                         <rect key="frame" x="165" y="10" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -65,6 +65,16 @@
                                         <rect key="frame" x="165" y="10" width="145" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oXc-Rl-OY1" userLabel="button2">
+                                        <rect key="frame" x="165" y="10" width="145" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Nd6-1t-kGt" kind="push" id="WfR-9p-9jT"/>
+                                        </connections>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田3" id="VJE-P3-Kal" userLabel="p3">
                                         <rect key="frame" x="10" y="218" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -73,6 +83,16 @@
                                         <rect key="frame" x="10" y="218" width="145" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fcM-Qh-a2y" userLabel="button3">
+                                        <rect key="frame" x="10" y="218" width="145" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Nd6-1t-kGt" kind="push" id="QGZ-cL-uKs"/>
+                                        </connections>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田4" id="vxu-M5-Cwy" userLabel="p4">
                                         <rect key="frame" x="165" y="218" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -81,6 +101,16 @@
                                         <rect key="frame" x="165" y="218" width="145" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iRP-Ev-ysD" userLabel="button4">
+                                        <rect key="frame" x="165" y="218" width="145" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Nd6-1t-kGt" kind="push" id="Egt-dc-qRf"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="36%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phz-ir-qG0" userLabel="湿度1">
                                         <rect key="frame" x="32" y="165" width="41" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -170,7 +200,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWP-sa-Vux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1346" y="1702"/>
+            <point key="canvasLocation" x="-1346" y="1669"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dFZ-Zg-MMb">
+            <objects>
+                <viewController id="Nd6-1t-kGt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="49j-0q-45b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterdrop副本_00000" id="aPB-tt-oOS">
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="F0X-YN-6ZN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gzt-yv-xY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1755" y="1610"/>
         </scene>
         <!--New Side Controller-->
         <scene sceneID="GEX-Da-8sp">
@@ -355,6 +406,7 @@
         <image name="tab2-交流1new" width="320" height="515"/>
         <image name="tab2-建立对话" width="22" height="22"/>
         <image name="waterdrop" width="145" height="145"/>
+        <image name="waterdrop副本_00000" width="290" height="290"/>
         <image name="侧栏bg" width="320" height="568"/>
         <image name="侧栏未选中button" width="259" height="46"/>
         <image name="侧栏选中button" width="258" height="46"/>
@@ -375,4 +427,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="WfR-9p-9jT"/>
+    </inferredMetricsTieBreakers>
 </document>

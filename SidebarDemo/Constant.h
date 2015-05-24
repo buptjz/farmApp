@@ -4,6 +4,11 @@
 #define SCROLLHEIGHT 560
 #define SCROLLHEIGHT2 450
 
+#define ANI_IMAGE_NUM 51
+#define ANI_IMAGE_NAME @"waterdrop副本_000"
+
+#define ANI_DURATION  3.3
+#define ANI_REPEAT 3
 
 #define ANIMATION_DURATION 2
 #define SEG1_IMAGE @"tab2-活动1new.png"

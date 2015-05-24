@@ -41,6 +41,8 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 @property (weak, nonatomic) IBOutlet UILabel *trsd3_label;
 @property (weak, nonatomic) IBOutlet UILabel *trsd4_label;
 
+@property (strong, nonatomic) NSMutableArray *ani_images;
+
 @end
 
 @implementation MainViewController
@@ -102,7 +104,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
                          [UIImage imageNamed:@"田2.png"],
                          [UIImage imageNamed:@"田3.png"],
                          [UIImage imageNamed:@"田4.png"],nil];
-        
+
     self.animation_image_view.animationImages = myImages;//将序列帧数组赋给UIImageView的animationImages属性
     self.animation_image_view.animationDuration = 0.25;//设置动画时间
     self.animation_image_view.animationRepeatCount = 1;//设置动画次数 0 表示无限
@@ -134,9 +136,11 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 -(IBAction)waterButtonPressed:(id)sender {
     [self postControlEvents:@"Water" value:@"True"];
-    [self initSheetView];
-    UIView *topView = [[[UIApplication sharedApplication] delegate] window];
-    [self.sheet showInView:topView animated:YES];
+    [self.waterButton.imageView startAnimating];
+//    [self initSheetView];
+//    UIView *topView = [[[UIApplication sharedApplication] delegate] window];
+//    [self.sheet showInView:topView animated:YES];
+
 }
 
 //-(void)viewDidDisappear:(BOOL)animated{
@@ -167,11 +171,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-//        [revealViewController.navigationController.navigationBar setBackgroundImage:
-//         [UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
-//        [revealViewController.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
-//                                                                         NSForegroundColorAttributeName, nil]];
-        
     }
     self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT);
     [self.myScrollView addPullToRefreshWithActionHandler:^{
@@ -182,8 +181,20 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     self.waterButton.alpha = 0.0;
     
     //设定定时器
-    self.timer =  [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(getDataEvents) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(getDataEvents) userInfo:nil repeats:YES];
+    
+    //初始化animation image
+    self.ani_images = [[NSMutableArray alloc]init];
+    for (int i = 0 ; i < ANI_IMAGE_NUM; i++) {
+        NSString *name = [NSString stringWithFormat:@"%@%02d.png",ANI_IMAGE_NAME,i];
+        NSLog(@"%@",name);
+        [self.ani_images addObject:[UIImage imageNamed:name]];
+    }
+    self.waterButton.imageView.animationImages = self.ani_images;//将序列帧数组赋给UIImageView的animationImages属性
+    self.waterButton.imageView.animationDuration = ANI_DURATION;//设置动画时间
+    self.waterButton.imageView.animationRepeatCount = ANI_REPEAT;//设置动画次数 0 表示无限
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
