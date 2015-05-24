@@ -26,6 +26,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 @property (strong,nonatomic) UIButton *okButton;
 @property (strong,nonatomic) JGActionSheet *sheet;
 @property (strong,nonatomic) UIImageView *animation_image_view;
+@property (strong,nonatomic) NSTimer *timer;
 
 @property (weak, nonatomic) IBOutlet UIButton *waterButton;
 @property (nonatomic) BOOL lackWater;
@@ -123,9 +124,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     
     JGActionSheetSection *section1 = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"确定", @"取消",@"填充"] buttonStyle:
                                       JGActionSheetButtonStyleDefault];
-    
     JGActionSheetSection *cus_sec = [[JGActionSheetSection alloc]initWithTitle:nil message:nil contentView:bgView];
-    
     NSArray *sections = @[cus_sec,section1];
     
     self.sheet = [JGActionSheet actionSheetWithSections:sections];
@@ -169,16 +168,16 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-
-    
     self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT);
-//    self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.myScrollView addPullToRefreshWithActionHandler:^{
         [self getDataEvents];
     }];
     
-//    self.waterButton.enabled = NO;
-//    self.waterButton.alpha = 0.0;
+    self.waterButton.enabled = NO;
+    self.waterButton.alpha = 0.0;
+    
+    //设定定时器
+    self.timer =  [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(getDataEvents) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -214,10 +213,12 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     navBarHairlineImageView.hidden = YES;
+    [self.timer setFireDate:[NSDate distantPast]];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     navBarHairlineImageView.hidden = NO;
+    [self.timer setFireDate:[NSDate distantFuture]];
 }
 
 @end

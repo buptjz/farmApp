@@ -167,11 +167,13 @@
 				F4090BC41A0FD6F800651F6F /* SidebarTableViewController.h */,
 				F4090BC51A0FD6F800651F6F /* SidebarTableViewController.m */,
 				834B25D71B07A83F00027B5C /* WaterViewController.h */,
+				834B25D81B07A83F00027B5C /* WaterViewController.m */,
 				834B25D91B07A83F00027B5C /* WaterViewController.xib */,
 				F4090BC11A0FD62A00651F6F /* MainViewController.h */,
 				83F75B461AFF8BCC008A27A8 /* SecondViewController.h */,
 				83F75B471AFF8BCC008A27A8 /* SecondViewController.m */,
 				835A3B201B077D1700808DCB /* ThirdViewController.h */,
+				835A3B211B077D1700808DCB /* ThirdViewController.m */,
 				835A3B231B077D2600808DCB /* FourthViewController.h */,
 				835A3B241B077D2600808DCB /* FourthViewController.m */,
 			);
@@ -213,10 +215,6 @@
 				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
 				F4090BC21A0FD62A00651F6F /* MainViewController.m */,
 				8349DE211B10345700640550 /* MainViewController+Network.m */,
-				835A3B211B077D1700808DCB /* ThirdViewController.m */,
-				834B25D81B07A83F00027B5C /* WaterViewController.m */,
-				F4090B961A0F67D000651F6F /* AppDelegate.m */,
-				F4090B921A0F67D000651F6F /* Info.plist */,
 				83D856361B0E166000701B55 /* Constant.h */,
 				83F75B491AFF8C62008A27A8 /* Vs */,
 				834B25F01B07AFA000027B5C /* libs */,
@@ -228,6 +226,8 @@
 		F4090B911A0F67D000651F6F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F4090B961A0F67D000651F6F /* AppDelegate.m */,
+				F4090B921A0F67D000651F6F /* Info.plist */,
 				8349DE171B10253400640550 /* BVJSONString.h */,
 				8349DE181B10253400640550 /* BVJSONString.m */,
 				8349DE201B10345700640550 /* MainViewController+Network.h */,
