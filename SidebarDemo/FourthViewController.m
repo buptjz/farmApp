@@ -7,6 +7,7 @@
 //
 
 #import "FourthViewController.h"
+#import "Helper.h"
 
 @interface FourthViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Helper initNavigationView:self];
+    self.title = @"我的菜篮";
     // Do any additional setup after loading the view.
 }
 

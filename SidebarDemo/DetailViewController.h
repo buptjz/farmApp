@@ -11,7 +11,7 @@
 @interface DetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *image_view;
-@property (weak, nonatomic) IBOutlet UILabel *label1;
+
 
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) UIImage *image;

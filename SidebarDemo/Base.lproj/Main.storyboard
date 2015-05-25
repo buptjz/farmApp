@@ -250,25 +250,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterdrop副本_00000" id="aPB-tt-oOS">
-                                <rect key="frame" x="0.0" y="64" width="320" height="160"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterdrop副本_00000" id="aPB-tt-oOS">
+                                <rect key="frame" x="0.0" y="64" width="320" height="180"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gDj-Ao-uxq">
-                                <rect key="frame" x="79" y="310" width="163" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8a7-Z1-Ojx">
+                                <rect key="frame" x="0.0" y="245" width="160" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="zPA-m9-5xh">
-                                <rect key="frame" x="0.0" y="251" width="320" height="29"/>
+                                <state key="normal" title="Button" image="xq_土壤湿度">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leftPressed:" destination="Nd6-1t-kGt" eventType="touchUpInside" id="I4U-mM-Aaw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EjI-eC-AdJ">
+                                <rect key="frame" x="160" y="245" width="160" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="" image="1农园（未选中）"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
+                                <state key="normal" title="Button" image="xq_生长阶段">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rightPressed:" destination="Nd6-1t-kGt" eventType="touchUpInside" id="pbL-83-RAm"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="xbl-lp-dVG">
+                                <rect key="frame" x="0.0" y="279" width="320" height="243"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xq_选中1" id="kiz-V4-udM">
+                                <rect key="frame" x="0.0" y="276" width="320" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -277,7 +290,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="image_view" destination="aPB-tt-oOS" id="WCO-ra-nlL"/>
-                        <outlet property="label1" destination="gDj-Ao-uxq" id="zDM-KY-sD5"/>
+                        <outlet property="lineImageVIew" destination="kiz-V4-udM" id="Cmo-3R-wN1"/>
+                        <outlet property="myScrollView" destination="xbl-lp-dVG" id="SEY-le-Kh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzt-yv-xY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,7 +349,7 @@
                         <segue destination="bvA-Gx-XPl" kind="relationship" relationship="viewControllers" id="PaK-o7-opU"/>
                         <segue destination="6Sh-4a-nMz" kind="relationship" relationship="viewControllers" id="3Bs-jy-Yjq"/>
                         <segue destination="v2o-U5-che" kind="relationship" relationship="viewControllers" id="K11-Ea-GFY"/>
-                        <segue destination="pa2-sj-FKq" kind="relationship" relationship="viewControllers" id="Xsw-eQ-CSU"/>
+                        <segue destination="oMj-JM-nUJ" kind="relationship" relationship="viewControllers" id="Cmu-vd-9rj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilz-Ml-llr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -434,10 +448,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="菜篮" image="4菜篮（未选中）" id="ajv-pX-gIq"/>
+                    <navigationItem key="navigationItem" id="y0D-j9-fHk">
+                        <barButtonItem key="rightBarButtonItem" image="市集.png" id="UuQ-jw-2sG"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ps6-pb-aAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181" y="998"/>
+            <point key="canvasLocation" x="-166" y="1702"/>
+        </scene>
+        <!--菜篮-->
+        <scene sceneID="Sc4-sx-OfQ">
+            <objects>
+                <navigationController id="oMj-JM-nUJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="菜篮" image="4菜篮（未选中）" id="34I-Zg-JOE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="20T-FP-bic">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pa2-sj-FKq" kind="relationship" relationship="rootViewController" id="pFP-wW-dAn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POk-Pn-6yB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-166" y="1010"/>
         </scene>
         <!--农园-->
         <scene sceneID="cWg-6b-WRA">
@@ -470,9 +504,13 @@
         <image name="tab2-建立对话" width="22" height="22"/>
         <image name="waterdrop" width="145" height="145"/>
         <image name="waterdrop副本_00000" width="290" height="290"/>
+        <image name="xq_土壤湿度" width="159" height="31"/>
+        <image name="xq_生长阶段" width="161" height="31"/>
+        <image name="xq_选中1" width="320" height="2"/>
         <image name="侧栏bg" width="320" height="568"/>
         <image name="侧栏未选中button" width="259" height="46"/>
         <image name="侧栏选中button" width="258" height="46"/>
+        <image name="市集.png" width="30" height="30"/>
         <image name="幼苗期new" width="146" height="199"/>
         <image name="开花期new" width="146" height="199"/>
         <image name="生长期new" width="146" height="199"/>

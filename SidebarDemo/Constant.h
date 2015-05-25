@@ -4,6 +4,10 @@
 #define TYPE3 @"香蕉"
 #define TYPE4 @"鸭梨"
 
+#define TYPE_2_IMAGE @"xq_5分区3.png"
+#define TYPE_3_IMAGE @"xq_5分区3.png"
+#define TYPE_4_IMAGE @"xq_5分区3.png"
+
 #define UPDATE_INTERNAL 6
 
 #define IMAGE_URL1 @"http://img13.360buyimg.com/n1/s130x130_g14/M05/07/00/rBEhVVHvTPQIAAAAAADjAIrGq0YAABXuQM74EAAAOMY696.jpg"
