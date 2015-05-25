@@ -31,7 +31,7 @@
             break;
         case 2:
             self.iv.image = [UIImage imageNamed:TH_SEG3_IMAGE];
-            NSLog(@"1 clicked.");
+            NSLog(@"2 clicked.");
             break;
     }
 }
@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [Helper initNavigationView:self];
-    UIImage *img = [UIImage imageNamed:@"社区bg.png"];
+    UIImage *img = [UIImage imageNamed:TH_SEG1_IMAGE];
     self.iv = [[UIImageView alloc]initWithImage:img];
     [self.myScrollView addSubview:self.iv];
     [self.myScrollView setContentSize:img.size];

@@ -29,7 +29,7 @@
 #define SEG1_IMAGE @"tab2-活动1new.png"
 #define SEG2_IMAGE @"tab2-交流1new.png"
 
-#define TH_SEG1_IMAGE @"tab2-活动1new.png"
+#define TH_SEG1_IMAGE @"社区bg.png"
 #define TH_SEG2_IMAGE @"tab2-活动1new.png"
 #define TH_SEG3_IMAGE @"tab2-活动1new.png"
 
