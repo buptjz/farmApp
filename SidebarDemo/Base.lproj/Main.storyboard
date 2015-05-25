@@ -57,7 +57,7 @@
                                             <action selector="waterButtonPressed:" destination="Z2I-Sz-A3d" eventType="touchUpInside" id="ERq-IR-Trc"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田2" id="L5b-13-wog" userLabel="p2">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田2" id="L5b-13-wog" userLabel="p2">
                                         <rect key="frame" x="165" y="10" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>

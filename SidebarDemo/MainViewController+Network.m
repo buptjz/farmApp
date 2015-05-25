@@ -22,10 +22,10 @@
 }
 
 -(void)updateImage{
-    [self.photo1_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL1]];
+//    [self.photo1_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL1]];
     [self.photo2_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL2]];
-    [self.photo3_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL3]];
-    [self.photo4_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL4]];
+//    [self.photo3_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL3]];
+//    [self.photo4_img_view setImageWithURL:[NSURL URLWithString:IMAGE_URL4]];
 }
 
 
