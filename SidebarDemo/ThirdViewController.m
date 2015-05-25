@@ -9,6 +9,7 @@
 #import "ThirdViewController.h"
 #import "Constant.h"
 #import "JGActionSheet.h"
+#import "Helper.h"
 
 @interface ThirdViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
@@ -57,10 +58,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
-                                                                     NSForegroundColorAttributeName, nil]];
+    [Helper initNavigationView:self];
     self.myImageView.image = [UIImage imageNamed:SEG1_IMAGE];
     self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT2);
     self.myScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -73,26 +71,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
-    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
-        return (UIImageView *)view;
-    }
-    for (UIView *subview in view.subviews) {
-        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
-        if (imageView) {
-            return imageView;
-        }
-    }
-    return nil;
-}
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    navBarHairlineImageView.hidden = YES;
-}
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    navBarHairlineImageView.hidden = NO;
-}
 
 @end

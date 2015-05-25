@@ -235,6 +235,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="myScrollView" destination="Jm0-Vw-nfI" id="ndg-Iu-CLY"/>
+                        <outlet property="mySeg" destination="jYY-w2-0Vv" id="cHr-Ki-JoJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0B-Ws-8Fp" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -25,6 +25,9 @@
 #define SEG1_IMAGE @"tab2-活动1new.png"
 #define SEG2_IMAGE @"tab2-交流1new.png"
 
+#define TH_SEG1_IMAGE @"tab2-活动1new.png"
+#define TH_SEG2_IMAGE @"tab2-活动1new.png"
+#define TH_SEG3_IMAGE @"tab2-活动1new.png"
 
 #define FONT_XI @"FZXiDengXian-Z06S"
 #define FONT_CU @"FZZhongDengXian-Z07S"
