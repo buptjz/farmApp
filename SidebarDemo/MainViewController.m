@@ -149,6 +149,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Helper initNavigationView:self];
 //    self.dataModel = [DadaManager LoadData];
     [self login:USERMAIL password:PWD];
     
@@ -158,12 +159,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     self.m3label.font = [UIFont fontWithName:FONT_CU size:21];
     
     self.title = FIRSTPAGETITLE;
-    
-    navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
-                                                       NSForegroundColorAttributeName, nil]];
-    
+
     SWRevealViewController *revealViewController = self.revealViewController;
     
     if ( revealViewController )
@@ -210,26 +206,14 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     [self presentViewController:activityVC animated:TRUE completion:nil];
 }
 
-- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
-    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
-        return (UIImageView *)view;
-    }
-    for (UIView *subview in view.subviews) {
-        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
-        if (imageView) {
-            return imageView;
-        }
-    }
-    return nil;
-}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    navBarHairlineImageView.hidden = YES;
+
     [self.timer setFireDate:[NSDate distantPast]];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    navBarHairlineImageView.hidden = NO;
     [self.timer setFireDate:[NSDate distantFuture]];
 }
 

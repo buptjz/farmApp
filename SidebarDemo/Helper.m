@@ -30,4 +30,25 @@
     }
 }
 
++ (void)initNavigationView:(UIViewController *)viewController{
+    UIImageView *navBarHairlineImageView = [Helper findHairlineImageViewUnder:viewController.navigationController.navigationBar];
+    navBarHairlineImageView.hidden = YES;
+    [viewController.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg128.png"] forBarMetrics:UIBarMetricsDefault];
+    [viewController.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],
+                                                                     NSForegroundColorAttributeName, nil]];
+}
+
++ (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+
 @end

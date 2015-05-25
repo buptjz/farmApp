@@ -7,8 +7,10 @@
 //
 
 #import "SecondViewController.h"
+#import "Helper.h"
 
 @interface SecondViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
 
 @end
 
@@ -16,6 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Helper initNavigationView:self];
+    UIImage *img = [UIImage imageNamed:@"社区bg.png"];
+    UIImageView *iv = [[UIImageView alloc]initWithImage:img];
+    [self.myScrollView addSubview:iv];
+    [self.myScrollView setContentSize:img.size];
+
     // Do any additional setup after loading the view.
 }
 

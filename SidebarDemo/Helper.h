@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Helper : NSObject
-
++ (void)initNavigationView:(UIViewController *)viewController;
 +(BOOL)judgeLackWater:(NSDictionary *)dic;
 @end
