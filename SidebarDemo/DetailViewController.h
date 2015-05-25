@@ -14,5 +14,7 @@
 
 
 @property (strong, nonatomic) NSString *type;
+@property (strong, nonatomic) NSString *shidu_value;
+
 @property (strong, nonatomic) UIImage *image;
 @end

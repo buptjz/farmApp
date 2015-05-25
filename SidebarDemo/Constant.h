@@ -8,6 +8,10 @@
 #define TYPE_3_IMAGE @"xq_5分区3.png"
 #define TYPE_4_IMAGE @"xq_5分区3.png"
 
+#define TYPE_2_IMAGE_l @"shidu.png"
+#define TYPE_3_IMAGE_l @"shidu.png"
+#define TYPE_4_IMAGE_l @"shidu.png"
+
 #define UPDATE_INTERNAL 6
 
 #define IMAGE_URL1 @"http://img13.360buyimg.com/n1/s130x130_g14/M05/07/00/rBEhVVHvTPQIAAAAAADjAIrGq0YAABXuQM74EAAAOMY696.jpg"
@@ -16,6 +20,7 @@
 #define IMAGE_URL4 @"http://img13.360buyimg.com/n1/s130x130_g14/M05/07/00/rBEhVVHvTPQIAAAAAADjAIrGq0YAABXuQM74EAAAOMY696.jpg"
 
 #define FIRSTPAGETITLE @"乐颗市民农园"
+
 #define SCROLLHEIGHT 560
 #define SCROLLHEIGHT2 450
 
@@ -61,10 +66,11 @@
 #define L2 @"Light P2"
 #define T2 @"Temperature P2"
 
+//湿度3
 #define H3 @"Humidity P3"
+
 #define L3 @"Light P3"
 #define T3 @"Temperature P3"
-
 
 #define H4 @"Humidity P4"
 #define L4 @"Light P4"

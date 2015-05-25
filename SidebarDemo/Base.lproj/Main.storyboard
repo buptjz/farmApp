@@ -254,6 +254,10 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="180"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xq_选中1" id="kiz-V4-udM">
+                                <rect key="frame" x="0.0" y="276" width="320" height="3"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8a7-Z1-Ojx">
                                 <rect key="frame" x="0.0" y="245" width="160" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -274,14 +278,21 @@
                                     <action selector="rightPressed:" destination="Nd6-1t-kGt" eventType="touchUpInside" id="pbL-83-RAm"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shidu" id="QZd-Iy-Kbs" userLabel="turanImage">
+                                <rect key="frame" x="0.0" y="279" width="320" height="243"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zKx-xA-jLO" userLabel="shidu_label">
+                                <rect key="frame" x="35" y="292" width="86" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="xbl-lp-dVG">
                                 <rect key="frame" x="0.0" y="279" width="320" height="243"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xq_选中1" id="kiz-V4-udM">
-                                <rect key="frame" x="0.0" y="276" width="320" height="3"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -292,6 +303,8 @@
                         <outlet property="image_view" destination="aPB-tt-oOS" id="WCO-ra-nlL"/>
                         <outlet property="lineImageVIew" destination="kiz-V4-udM" id="Cmo-3R-wN1"/>
                         <outlet property="myScrollView" destination="xbl-lp-dVG" id="SEY-le-Kh1"/>
+                        <outlet property="shidu_label" destination="zKx-xA-jLO" id="ZM7-0t-41V"/>
+                        <outlet property="turangImage" destination="QZd-Iy-Kbs" id="0Xt-M3-uVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzt-yv-xY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -500,6 +513,7 @@
         <image name="3消息（选中）" width="30" height="30"/>
         <image name="4菜篮（未选中）" width="30" height="30"/>
         <image name="bg+温湿度光照度new" width="320" height="153"/>
+        <image name="shidu" width="320" height="259"/>
         <image name="tab2-交流1new" width="320" height="515"/>
         <image name="tab2-建立对话" width="22" height="22"/>
         <image name="waterdrop" width="145" height="145"/>

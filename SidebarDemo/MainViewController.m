@@ -218,16 +218,22 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    AppDelegate *appDelegate= [[UIApplication sharedApplication] delegate];
+    NSDictionary *dataModel = appDelegate.dataModel;
+    
     DetailViewController *dvc = (DetailViewController *)segue.destinationViewController;
     if([segue.identifier isEqualToString:@"d2segue"]){
         dvc.type = TYPE2;
+        dvc.shidu_value = [(NSDictionary *)[dataModel valueForKey:H2] valueForKey:@"value"];
         dvc.image = self.photo2_img_view.image;
     }else if([segue.identifier isEqualToString:@"d3segue"]){
         dvc.type = TYPE3;
+        dvc.shidu_value = [(NSDictionary *)[dataModel valueForKey:H3] valueForKey:@"value"];
         dvc.image = self.photo3_img_view.image;
     }else if([segue.identifier isEqualToString:@"d4segue"]){
         dvc.image = self.photo4_img_view.image;
         dvc.type = TYPE4;
+        dvc.shidu_value = [(NSDictionary *)[dataModel valueForKey:H4] valueForKey:@"value"];
     }
     
 }
