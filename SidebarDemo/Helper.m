@@ -8,8 +8,36 @@
 
 #import "Helper.h"
 #import "Constant.h"
+#import "AppDelegate.h"
 
 @implementation Helper
+
++(void)generateFakeData{
+    //空气湿度：40+-3%
+    //温度：20~27
+    //光照：60~70 LUX
+    //土壤湿度1 30~40%
+    //土壤湿度2 60~
+    //土壤湿度3
+    //土壤湿度3
+    AppDelegate *appDelegate= [[UIApplication sharedApplication] delegate];
+    NSDictionary *dataModel = appDelegate.dataModel;
+    
+    srandom(time(0));
+    for (NSString *key in dataModel) {
+        if ([dataModel[key] isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *cgq = [dataModel objectForKey:key];
+            NSString *f = cgq[@"fluctuate"];
+            NSString *v = cgq[@"value"];
+            int flucRange = f.intValue;
+            int avg = v.intValue;
+            int sign = 1;
+            if(random() % 2 == 1) sign = -1;
+            int final = avg + random() % flucRange * sign;
+            [cgq setValue:[NSString stringWithFormat:@"%d",final] forKey:@"value"];
+        }
+    }
+}
 
 +(BOOL)judgeLackWater:(NSDictionary *)dic{
 //    srandom(time(0));
@@ -21,7 +49,7 @@
 //    return false;
     
     NSString *h1Value = [(NSDictionary *)[dic valueForKey:H1] valueForKey:@"value"];
-    if (h1Value.intValue == 0) {
+    if (h1Value.intValue < 50) {
         NSLog(@"缺！");
         return true;
     }else{

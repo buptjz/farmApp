@@ -41,7 +41,6 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 @property (weak, nonatomic) IBOutlet UILabel *trsd2_label;
 @property (weak, nonatomic) IBOutlet UILabel *trsd3_label;
 @property (weak, nonatomic) IBOutlet UILabel *trsd4_label;
-
 @property (strong, nonatomic) NSMutableArray *ani_images;
 
 
@@ -59,6 +58,19 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     self.trsd2_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[dataModel valueForKey:H2] valueForKey:@"value"]];
     self.trsd3_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[dataModel valueForKey:H3] valueForKey:@"value"]];
     self.trsd4_label.text = [NSString stringWithFormat:@"%@%%",[(NSDictionary *)[dataModel valueForKey:H4] valueForKey:@"value"]];
+    
+    self.m1label.text = [NSString stringWithFormat:@"%@%@",
+                         [(NSDictionary *)[dataModel valueForKey:A1] valueForKey:@"value"],
+                        [(NSDictionary *)[dataModel valueForKey:A1] valueForKey:@"suffix"]];
+    
+    self.m2label.text = [NSString stringWithFormat:@"%@%@",
+                         [(NSDictionary *)[dataModel valueForKey:T1] valueForKey:@"value"],
+                         [(NSDictionary *)[dataModel valueForKey:T1] valueForKey:@"suffix"]];
+    
+    self.m3label.text = [NSString stringWithFormat:@"%@%@",
+                         [(NSDictionary *)[dataModel valueForKey:L1] valueForKey:@"value"],
+                         [(NSDictionary *)[dataModel valueForKey:L1] valueForKey:@"suffix"]];
+    
     self.lackWater = [Helper judgeLackWater:dataModel];
 }
 
@@ -170,7 +182,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     }
     self.myScrollView.contentSize = CGSizeMake(320, SCROLLHEIGHT);
     [self.myScrollView addPullToRefreshWithActionHandler:^{
-        [self getDataEvents];
+        [self updateAll];
     }];
     
     self.waterButton.enabled = NO;

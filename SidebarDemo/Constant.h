@@ -1,5 +1,6 @@
 
-
+#define HAS_NETWORK NO
+//#define HAS_NETWORK YES
 #define TYPE2 @"苹果"
 #define TYPE3 @"香蕉"
 #define TYPE4 @"鸭梨"
@@ -28,7 +29,7 @@
 #define ANI_IMAGE_NAME @"waterdrop副本_000"
 
 #define ANI_DURATION  3.3
-#define ANI_REPEAT 3
+#define ANI_REPEAT 20
 
 #define ANIMATION_DURATION 2
 #define SEG1_IMAGE @"tab2-活动1new.png"
@@ -51,7 +52,6 @@
 #define DATA_EVENTS         @"http://mcotton-01.chinacloudapp.cn:80/api/v1.0/de"
 #define CONTROL_EVENTS      @"http://mcotton-01.chinacloudapp.cn:80/api/v1.0/ce"
 
-
 #define USERMAIL @"iasc@163.com"
 #define PWD @"123456"
 #define AUTH_TOKEN_FIELD @"authToken"
@@ -59,21 +59,11 @@
 #define APP_ID_FIELD @"my_app_kit_id"
 
 #define H1 @"Humidity P1"
+#define H2 @"Humidity P2"
+#define H3 @"Humidity P3"
+#define H4 @"Humidity P4"
 #define L1 @"Light P1"
 #define T1 @"Temperature P1"
-
-#define H2 @"Humidity P2"
-#define L2 @"Light P2"
-#define T2 @"Temperature P2"
-
-//湿度3
-#define H3 @"Humidity P3"
-
-#define L3 @"Light P3"
-#define T3 @"Temperature P3"
-
-#define H4 @"Humidity P4"
-#define L4 @"Light P4"
-#define T4 @"Temperature P4"
+#define A1 @"AIR Temperature P1"
 
 

@@ -12,4 +12,5 @@
 @interface Helper : NSObject
 + (void)initNavigationView:(UIViewController *)viewController;
 +(BOOL)judgeLackWater:(NSDictionary *)dic;
++(void)generateFakeData;
 @end

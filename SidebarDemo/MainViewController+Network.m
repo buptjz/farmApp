@@ -13,12 +13,18 @@
 #import "BVJSONString.h"
 #import "SVPullToRefresh.h"
 #import "UIImageView+AFNetworking.h"
+#import "Helper.h"
 
 @implementation MainViewController (Network)
 
 -(void)updateAll{
-    [self updateImage];
-    [self getDataEvents];
+    if (HAS_NETWORK) {
+        [self updateImage];
+        [self getDataEvents];
+    }else{
+        [self performSelector:@selector(updateTheUI) withObject:nil afterDelay:0.5f];
+        [Helper generateFakeData];
+    }
 }
 
 -(void)updateImage{

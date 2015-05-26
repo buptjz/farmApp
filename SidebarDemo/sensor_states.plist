@@ -13,77 +13,87 @@
 		<key>submit_time</key>
 		<string>1432277717418</string>
 		<key>value</key>
-		<string>12</string>
+		<string>35</string>
+		<key>fluctuate</key>
+		<string>5</string>
+		<key>suffix</key>
+		<string>%</string>
 		<key>other</key>
 		<string>摄氏度</string>
 	</dict>
 	<key>Humidity P2</key>
 	<dict>
+		<key>fluctuate</key>
+		<string>5</string>
+		<key>suffix</key>
+		<string>%</string>
 		<key>submit_time</key>
 		<string>1432277717418</string>
 		<key>value</key>
-		<string>16</string>
+		<string>60</string>
 		<key>other</key>
 		<string>摄氏度</string>
 	</dict>
 	<key>Humidity P3</key>
 	<dict>
+		<key>fluctuate</key>
+		<string>5</string>
+		<key>suffix</key>
+		<string>%</string>
 		<key>submit_time</key>
 		<string>1432277717418</string>
 		<key>value</key>
-		<string>19</string>
+		<string>65</string>
+		<key>other</key>
+		<string>摄氏度</string>
+	</dict>
+	<key>Humidity P4</key>
+	<dict>
+		<key>fluctuate</key>
+		<string>5</string>
+		<key>suffix</key>
+		<string>%</string>
+		<key>submit_time</key>
+		<string>1432277717418</string>
+		<key>value</key>
+		<string>62</string>
 		<key>other</key>
 		<string>摄氏度</string>
 	</dict>
 	<key>Light P1</key>
 	<dict>
+		<key>fluctuate</key>
+		<string>3</string>
+		<key>suffix</key>
+		<string>Lux</string>
 		<key>submit_time</key>
 		<string>1432277717418</string>
 		<key>value</key>
-		<string>324</string>
+		<string>65</string>
 		<key>other</key>
 		<string>摄氏度</string>
 	</dict>
-	<key>Light P2</key>
-	<dict>
-		<key>value</key>
-		<string>41</string>
-		<key>submit_time</key>
-		<string>1432277717418</string>
-		<key>other</key>
-		<string>%</string>
-	</dict>
-	<key>Light P3</key>
-	<dict>
-		<key>value</key>
-		<string>12</string>
-		<key>submit_time</key>
-		<string>1432277717418</string>
-		<key>other</key>
-		<string>%</string>
-	</dict>
 	<key>Temperature P1</key>
 	<dict>
+		<key>fluctuate</key>
+		<string>2</string>
+		<key>suffix</key>
+		<string>℃</string>
 		<key>value</key>
+		<string>24</string>
+		<key>submit_time</key>
+		<string>1432277717418</string>
+		<key>other</key>
+		<string>%</string>
+	</dict>
+	<key>AIR Temperature P1</key>
+	<dict>
+		<key>fluctuate</key>
 		<string>3</string>
-		<key>submit_time</key>
-		<string>1432277717418</string>
-		<key>other</key>
+		<key>suffix</key>
 		<string>%</string>
-	</dict>
-	<key>Temperature P2</key>
-	<dict>
 		<key>value</key>
-		<string>444</string>
-		<key>submit_time</key>
-		<string>1432277717418</string>
-		<key>other</key>
-		<string>%</string>
-	</dict>
-	<key>Temperature P3</key>
-	<dict>
-		<key>value</key>
-		<string>444</string>
+		<string>40</string>
 		<key>submit_time</key>
 		<string>1432277717418</string>
 		<key>other</key>

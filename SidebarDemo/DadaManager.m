@@ -7,8 +7,11 @@
 //
 
 #import "DadaManager.h"
+#import "AppDelegate.h"
 
 @implementation DadaManager
+
+
 
 
 +(NSMutableDictionary *)LoadData{
