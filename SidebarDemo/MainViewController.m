@@ -149,9 +149,14 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     }];
 }
 
+-(void)backState{
+    [self.waterButton setImage:[UIImage imageNamed:@"waterdrop"] forState:UIControlStateSelected];
+}
+
 -(IBAction)waterButtonPressed:(id)sender {
     [self postControlEvents:@"Water" value:@"True"];
     [self.waterButton.imageView startAnimating];
+//    [self performSelector:@selector(backState) withObject:nil afterDelay:2];
 //    [self initSheetView];
 //    UIView *topView = [[[UIApplication sharedApplication] delegate] window];
 //    [self.sheet showInView:topView animated:YES];

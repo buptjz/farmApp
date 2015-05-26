@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWP-sa-Vux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1346" y="1669"/>
+            <point key="canvasLocation" x="-1346" y="1702"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="5Po-g7-kV3">
@@ -326,7 +326,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dob-q1-3RW">
                                 <rect key="frame" x="-129" y="122" width="518" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="侧栏未选中button">
+                                <state key="normal" image="侧栏选中button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="selected" image="侧栏选中button"/>
@@ -430,8 +430,8 @@
                             <rect key="frame" x="96" y="7.5" width="128" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="活动"/>
                                 <segment title="交流"/>
+                                <segment title="活动"/>
                             </segments>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="tab2-建立对话" id="KiG-Io-3cx">
@@ -522,7 +522,6 @@
         <image name="xq_生长阶段" width="161" height="31"/>
         <image name="xq_选中1" width="320" height="2"/>
         <image name="侧栏bg" width="320" height="568"/>
-        <image name="侧栏未选中button" width="259" height="46"/>
         <image name="侧栏选中button" width="258" height="46"/>
         <image name="市集.png" width="30" height="30"/>
         <image name="幼苗期new" width="146" height="199"/>
