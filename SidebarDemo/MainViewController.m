@@ -206,6 +206,15 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
     self.waterButton.imageView.animationImages = self.ani_images;//将序列帧数组赋给UIImageView的animationImages属性
     self.waterButton.imageView.animationDuration = ANI_DURATION;//设置动画时间
     self.waterButton.imageView.animationRepeatCount = ANI_REPEAT;//设置动画次数 0 表示无限
+    
+    self.photo1_img_view.image = [UIImage imageNamed:SHEXT_1_IMAGE];
+    self.photo2_img_view.image = [UIImage imageNamed:SHEXT_2_IMAGE];
+    self.photo3_img_view.image = [UIImage imageNamed:SHEXT_3_IMAGE];
+    self.photo4_img_view.image = [UIImage imageNamed:SHEXT_4_IMAGE];
+    self.bg1_img_view.image = [UIImage imageNamed:BG_1_IMAGE];
+    self.bg2_img_view.image = [UIImage imageNamed:BG_2_IMAGE];
+    self.bg3_img_view.image = [UIImage imageNamed:BG_3_IMAGE];
+    self.bg4_img_view.image = [UIImage imageNamed:BG_4_IMAGE];
 }
 
 
@@ -226,7 +235,7 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+        self.title = FIRSTPAGETITLE;
     [self.timer setFireDate:[NSDate distantPast]];
 }
 - (void)viewWillDisappear:(BOOL)animated {
@@ -243,14 +252,17 @@ static NSString *myURLString  = @"http://api.yeelink.net/v1.0/device/18975/senso
         dvc.type = TYPE2;
         dvc.shidu_value = [(NSDictionary *)[dataModel valueForKey:H2] valueForKey:@"value"];
         dvc.image = self.photo2_img_view.image;
+        self.title = @"";
     }else if([segue.identifier isEqualToString:@"d3segue"]){
         dvc.type = TYPE3;
         dvc.shidu_value = [(NSDictionary *)[dataModel valueForKey:H3] valueForKey:@"value"];
         dvc.image = self.photo3_img_view.image;
+        self.title = @"";
     }else if([segue.identifier isEqualToString:@"d4segue"]){
         dvc.image = self.photo4_img_view.image;
         dvc.type = TYPE4;
         dvc.shidu_value = [(NSDictionary *)[dataModel valueForKey:H4] valueForKey:@"value"];
+        self.title = @"";
     }
     
 }

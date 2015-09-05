@@ -1,16 +1,28 @@
 
 #define HAS_NETWORK NO
 //#define HAS_NETWORK YES
-#define TYPE2 @"苹果"
-#define TYPE3 @"香蕉"
-#define TYPE4 @"鸭梨"
 
-#define TYPE_2_IMAGE @"xq_5分区3.png"
-#define TYPE_3_IMAGE @"xq_5分区3.png"
+#define TYPE1 @"萝卜"
+#define TYPE2 @"五彩椒"
+#define TYPE3 @"辣椒"
+#define TYPE4 @"黄瓜"
+
+#define BG_1_IMAGE @"01生长期new.png"
+#define BG_2_IMAGE @"02结果期new.png"
+#define BG_3_IMAGE @"01生长期new.png"
+#define BG_4_IMAGE @"04幼苗期new.png"
+
+#define SHEXT_1_IMAGE @"萝卜大脸.png"
+#define SHEXT_2_IMAGE @"五彩椒大脸.png"
+#define SHEXT_3_IMAGE @"辣椒大脸.png"
+#define SHEXT_4_IMAGE @"4黄瓜君本人大脸.png"
+
+#define TYPE_2_IMAGE @"2五彩椒.png"
+#define TYPE_3_IMAGE @"3辣椒君new.png"
 #define TYPE_4_IMAGE @"4黄瓜君.png"
 
-#define TYPE_2_IMAGE_l @"shidu.png"
-#define TYPE_3_IMAGE_l @"shidu.png"
+#define TYPE_2_IMAGE_l @"2五彩椒土壤湿度.png"
+#define TYPE_3_IMAGE_l @"3辣椒君的湿度.png"
 #define TYPE_4_IMAGE_l @"4黄瓜君土壤湿度.png"
 
 #define UPDATE_INTERNAL 20
@@ -25,11 +37,11 @@
 #define SCROLLHEIGHT 560
 #define SCROLLHEIGHT2 450
 
-#define ANI_IMAGE_NUM 51
+#define ANI_IMAGE_NUM 40
 #define ANI_IMAGE_NAME @"waterdrop副本_000"
 
 #define ANI_DURATION  3.3
-#define ANI_REPEAT 1
+#define ANI_REPEAT 20
 
 #define ANIMATION_DURATION 2
 #define SEG2_IMAGE @"tab2-活动1new.png"

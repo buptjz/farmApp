@@ -20,5 +20,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photo4_img_view;
 @property (weak, nonatomic) IBOutlet UIImageView *photo1_img_view;
 
+@property (weak, nonatomic) IBOutlet UIImageView *bg1_img_view;
+@property (weak, nonatomic) IBOutlet UIImageView *bg2_img_view;
+@property (weak, nonatomic) IBOutlet UIImageView *bg3_img_view;
+@property (weak, nonatomic) IBOutlet UIImageView *bg4_img_view;
+
 -(void)updateTheUI;
 @end

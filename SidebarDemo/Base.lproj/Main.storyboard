@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="216" width="320" height="429"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田1" id="des-3S-5fj" userLabel="p1">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田1" id="des-3S-5fj" userLabel="p1">
                                         <rect key="frame" x="10" y="10" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -75,7 +75,7 @@
                                             <segue destination="Nd6-1t-kGt" kind="push" identifier="d2segue" id="WfR-9p-9jT"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田3" id="VJE-P3-Kal" userLabel="p3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田3" id="VJE-P3-Kal" userLabel="p3">
                                         <rect key="frame" x="10" y="218" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -93,7 +93,7 @@
                                             <segue destination="Nd6-1t-kGt" kind="push" identifier="d3segue" id="QGZ-cL-uKs"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田4" id="vxu-M5-Cwy" userLabel="p4">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="田4" id="vxu-M5-Cwy" userLabel="p4">
                                         <rect key="frame" x="165" y="218" width="145" height="145"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -185,6 +185,10 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bg1_img_view" destination="0kn-pr-wLT" id="9Xl-HA-qb1"/>
+                        <outlet property="bg2_img_view" destination="Z3Y-ay-e08" id="gMG-eG-14a"/>
+                        <outlet property="bg3_img_view" destination="TUn-vX-zxl" id="ZNw-vG-k4O"/>
+                        <outlet property="bg4_img_view" destination="Vzv-l6-GFN" id="dCe-j5-xjl"/>
                         <outlet property="m1label" destination="ieN-b7-l2R" id="W1v-I1-7is"/>
                         <outlet property="m2label" destination="kqX-IB-kj5" id="r0L-vs-OP3"/>
                         <outlet property="m3label" destination="9DL-1t-hFn" id="9rL-xH-Vqa"/>
